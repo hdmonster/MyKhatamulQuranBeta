@@ -74,18 +74,26 @@
             android:layout_centerHorizontal="true" />
 
     <TextView
-        android:textColor="#0597f1"
-        android:id="@+id/linkSignup"
+        android:id="@+id/txtOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:text="@string/go_offline"
         android:gravity="center"
         android:textSize="16dip"
         android:layout_below="@+id/textView2"
         android:layout_alignRight="@+id/textView2"
+=======
+>>>>>>> Stashed changes
         android:layout_alignEnd="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView2"
         android:layout_marginTop="17dp"
-        android:layout_alignStart="@+id/textView2" />
+        android:gravity="center"
+        android:text="Go  Offline"
+        android:textColor="#0597f1"
+        android:textSize="16dip" />
 
     <TextView
         android:id="@+id/textView2"
