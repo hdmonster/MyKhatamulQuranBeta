@@ -102,14 +102,12 @@ public class    FullscreenActivity extends AppCompatActivity {
             }
         });
 
-        Button reg = (Button) findViewById(R.id.button2);
-        reg.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0){
+        new Handler().postDelayed(new Runnable(){
+            public void run(){
                 Intent reg = new Intent(FullscreenActivity.this,MainActivityRegister.class);
                 startActivity(reg);
             }
-        });
+        }, 2500);
     }
 
     @Override
