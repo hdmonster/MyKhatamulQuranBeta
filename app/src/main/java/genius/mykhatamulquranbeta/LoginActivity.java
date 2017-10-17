@@ -25,5 +25,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        Button login = (Button) findViewById(R.id.btnLogin);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(LoginActivity.this, modeOnline.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

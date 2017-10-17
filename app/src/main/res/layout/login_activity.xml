@@ -73,39 +73,29 @@
             android:layout_below="@+id/password"
             android:layout_centerHorizontal="true" />
 
-    <TextView
+        <TextView
         android:id="@+id/txtOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-        android:text="@string/go_offline"
+        android:text="Offline Mode"
         android:gravity="center"
         android:textSize="16dip"
-        android:layout_below="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-=======
->>>>>>> Stashed changes
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="17dp"
-        android:gravity="center"
-        android:text="Go  Offline"
-        android:textColor="#0597f1"
-        android:textSize="16dip" />
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/txtReg"
+            android:layout_centerHorizontal="true" />
+
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtReg"
         android:textColor="#0597f1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Buat Akun "
         android:textSize="16dip"
+        android:layout_marginTop="48dp"
         android:layout_below="@+id/btnLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
