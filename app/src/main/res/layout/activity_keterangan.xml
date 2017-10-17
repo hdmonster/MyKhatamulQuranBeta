@@ -5,49 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="genius.mykhatamulquranbeta.Keterangan"
-    android:background="@drawable/th">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="385dp"
-        android:layout_height="142dp"
-        app:srcCompat="@drawable/n"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_marginTop="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:text="Keterangan:"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="167dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mulai"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/button3"
-        android:layout_marginStart="81dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="84dp"
-        android:text="Tuttorial" />
+    android:background="@drawable/leaf">
 
     <TextView
         android:id="@+id/textView5"
@@ -58,6 +16,56 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2"
         android:textColor="#000000"/>
-        //android:text=""
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="50dp"
+        android:text="Mulai"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="67dp"
+        android:text="tutorial" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/n"
+        android:layout_marginBottom="365dp"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="121dp"
+        android:text="Keterangan:"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView7"
+        android:textSize="20sp"
+        android:text="Aplikasi My Khatamul Quran adallah aplikasi membaca al-qur'an dengan cepat........" />
+
 
 </RelativeLayout>
