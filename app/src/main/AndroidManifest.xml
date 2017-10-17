@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Loading_Screen"
+            android:name=".LoadingActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme">
@@ -27,9 +27,10 @@
         </activity>
         <activity android:name=".MainActivityRegister" />
         <activity android:name=".startOfflineActivity" />
-        <activity android:name=".Keterangan" />
+        <activity android:name=".KeteranganActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".startOnlineActivity"></activity>
+        <activity android:name=".startOnlineActivity" />
+        <activity android:name=".GrapicsActivity"></activity>
     </application>
 
 </manifest>

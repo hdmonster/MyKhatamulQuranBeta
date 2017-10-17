@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class Loading_Screen extends AppCompatActivity {
+public class LoadingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class Loading_Screen extends AppCompatActivity {
        public void run(){
            try {
                sleep(3000);
-               Intent intent = new Intent(getApplicationContext(),Keterangan.class);
+               Intent intent = new Intent(getApplicationContext(),KeteranganActivity.class);
                startActivity(intent);
                finish();
            } catch (InterruptedException e) {

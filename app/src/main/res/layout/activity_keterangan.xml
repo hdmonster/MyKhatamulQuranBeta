@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="genius.mykhatamulquranbeta.Keterangan"
+    tools:context="genius.mykhatamulquranbeta.KeteranganActivity"
     android:background="@drawable/leaf">
 
     <TextView
