@@ -26,10 +26,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivityRegister" />
-        <activity android:name=".startOfflineActivity"/>
-        <activity android:name=".Keterangan"/>
-        <activity android:name=".LoginActivity"/>
-
+        <activity android:name=".startOfflineActivity" />
+        <activity android:name=".Keterangan" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".modeOnline"></activity>
     </application>
 
 </manifest>
