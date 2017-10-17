@@ -16,6 +16,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
+        TextView reg = (TextView) findViewById(R.id.txtReg);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
+                startActivity(intent);
+            }
+        });
+
         TextView off = (TextView) findViewById(R.id.txtOff);
         off.setOnClickListener(new View.OnClickListener() {
             @Override
