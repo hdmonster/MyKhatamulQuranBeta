@@ -14,5 +14,14 @@ public class Keterangan extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keterangan);
 
+        Button mulai = (Button) findViewById(R.id.button3);
+        mulai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(Keterangan.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
