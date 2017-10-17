@@ -14,7 +14,7 @@
         android:layout_below="@+id/editText4"
         android:layout_marginEnd="34dp"
         android:layout_marginTop="46dp"
-        android:text="Buat Akun" />
+        android:text="@string/buat_akun" />
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="22dp"
         android:layout_marginTop="28dp"
-        android:text="Username" />
+        android:text="@string/username" />
 
     <EditText
         android:id="@+id/editText"
@@ -35,14 +35,15 @@
         android:layout_alignBaseline="@+id/textView"
         android:layout_alignBottom="@+id/textView"
         android:layout_toEndOf="@+id/textView"
-        android:layout_marginStart="20dp" />
+        android:layout_marginStart="20dp"
+        tools:ignore="LabelFor" />
 
     <RadioButton
         android:id="@+id/radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:text="Laki-Laki"
+        android:text="@string/laki_laki"
         android:layout_below="@+id/editText"
         android:layout_alignStart="@+id/editText2" />
 
@@ -50,7 +51,7 @@
         android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Perempuan"
+        android:text="@string/perempuan"
         android:layout_above="@+id/editText2"
         android:layout_toEndOf="@+id/radioButton"
         android:layout_marginStart="10dp" />
@@ -60,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Usia"
+        android:text="@string/usia"
         android:layout_below="@+id/radioButton"
         android:layout_alignEnd="@+id/textView" />
 
@@ -72,13 +73,14 @@
         android:layout_below="@+id/radioButton"
         android:layout_marginTop="11dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="@string/password"
         android:layout_alignBaseline="@+id/editText3"
         android:layout_alignBottom="@+id/editText3"
         android:layout_alignEnd="@+id/textView3" />
@@ -91,7 +93,8 @@
         android:inputType="textPassword"
         android:layout_below="@+id/editText2"
         android:layout_alignStart="@+id/editText2"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/editText4"
@@ -101,13 +104,14 @@
         android:inputType="textPersonName"
         android:layout_below="@+id/editText3"
         android:layout_alignStart="@+id/editText3"
-        android:layout_marginTop="29dp" />
+        android:layout_marginTop="29dp"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
+        android:text="@string/email"
         android:layout_alignBaseline="@+id/editText4"
         android:layout_alignBottom="@+id/editText4"
         android:layout_alignEnd="@+id/textView4" />

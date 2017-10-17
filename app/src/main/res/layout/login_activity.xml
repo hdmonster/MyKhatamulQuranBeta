@@ -78,7 +78,7 @@
         android:id="@+id/linkSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go  Offline"
+        android:text="@string/go_offline"
         android:gravity="center"
         android:textSize="16dip"
         android:layout_below="@+id/textView2"
