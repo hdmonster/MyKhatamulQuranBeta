@@ -29,7 +29,8 @@
         <activity android:name=".startOfflineActivity" />
         <activity android:name=".Keterangan" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".modeOnline"></activity>
+        <activity android:name=".modeOnline" />
+        <activity android:name=".startOnlineActivity"></activity>
     </application>
 
 </manifest>
