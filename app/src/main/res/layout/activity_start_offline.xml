@@ -10,10 +10,10 @@
     <Button
         android:id="@+id/btn_start1"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="mulai" />
+        android:background="@drawable/refresh" />
 
     <Button
         android:id="@+id/btn_online"
@@ -22,11 +22,11 @@
         android:layout_below="@+id/btn_start1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
-        android:text="go online" />
+        android:background="@drawable/online" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="360dp"
+        android:layout_width="320dp"
         android:layout_height="190dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
