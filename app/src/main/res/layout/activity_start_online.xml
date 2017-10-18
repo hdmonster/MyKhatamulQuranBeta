@@ -23,13 +23,13 @@
         android:id="@+id/btn_start"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_above="@+id/btn_record"
+        android:layout_alignStart="@+id/btn_grafik"
         android:layout_marginBottom="32dp"
-        android:text="mulai"
+        android:background="@drawable/q"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="152dp"
-        android:layout_above="@+id/btn_record"
-        android:layout_alignStart="@+id/btn_grafik" />
+        tools:layout_editor_absoluteY="152dp" />
 
     <Button
         android:id="@+id/btn_record"

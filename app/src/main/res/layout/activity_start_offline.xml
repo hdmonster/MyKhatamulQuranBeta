@@ -13,7 +13,7 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="mulai" />
+        android:background="@drawable/q" />
 
     <Button
         android:id="@+id/btn_online"
@@ -22,7 +22,7 @@
         android:layout_below="@+id/btn_start1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
-        android:text="go online" />
+        android:background="@drawable/online" />
 
     <ImageView
         android:id="@+id/imageView4"
