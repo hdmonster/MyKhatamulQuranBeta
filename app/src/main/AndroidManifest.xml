@@ -30,7 +30,6 @@
         <activity android:name=".KeteranganActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".startOnlineActivity" />
-        <activity android:name=".GrapicsActivity"></activity>
     </application>
 
 </manifest>
