@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -19,16 +20,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
-</LinearLayout>
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:background="@drawable/q4"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp" />
+
+    </LinearLayout>
 
     <TextView
         android:text=""
@@ -49,9 +42,9 @@
         android:ems="10"
         android:id="@+id/username"
         android:hint="Username"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_above="@+id/password"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="39dp" />
 
         <EditText
             android:id="@+id/password"
@@ -60,9 +53,7 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:layout_marginTop="13dp"
-            android:layout_below="@+id/username"
-            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/btnLogin"
             android:layout_alignParentStart="true" />
 
         <Button
@@ -70,9 +61,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin"
-            android:layout_marginTop="33dp"
-            android:layout_below="@+id/password"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignBottom="@+id/txtReg"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="48dp" />
 
         <TextView
         android:id="@+id/txtOff"
@@ -81,9 +72,9 @@
         android:text="Offline Mode"
         android:gravity="center"
         android:textSize="16dip"
-            android:layout_marginTop="33dp"
-            android:layout_below="@+id/txtReg"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="46dp" />
 
 
     <TextView
@@ -94,8 +85,17 @@
         android:gravity="center"
         android:text="Buat Akun "
         android:textSize="16dip"
-        android:layout_marginTop="48dp"
-        android:layout_below="@+id/btnLogin"
+        android:layout_above="@+id/txtOff"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="360dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/n"
+        android:layout_alignTop="@+id/textView"
         android:layout_centerHorizontal="true" />
 
 
