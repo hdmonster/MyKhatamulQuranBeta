@@ -24,17 +24,6 @@
 
 
 
-    <TextView
-        android:text=""
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp" />
 
     <EditText
         android:id="@+id/username"
