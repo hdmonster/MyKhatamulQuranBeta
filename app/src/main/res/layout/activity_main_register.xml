@@ -41,16 +41,16 @@
         tools:ignore="LabelFor" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/radioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/laki_laki"
-        android:layout_alignBaseline="@+id/radioButton"
-        android:layout_alignBottom="@+id/radioButton"
+        android:layout_alignBaseline="@+id/radioButton2"
+        android:layout_alignBottom="@+id/radioButton2"
         android:layout_alignStart="@+id/editText2" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/radioButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/perempuan"

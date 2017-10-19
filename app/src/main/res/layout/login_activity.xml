@@ -29,35 +29,32 @@
         android:id="@+id/username"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:background="?attr/colorBackgroundFloating"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
         android:layout_above="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp" />
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:background="@android:color/background_light"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
         android:layout_above="@+id/btnLogin"
         android:layout_alignStart="@+id/username"
-        android:layout_marginBottom="31dp" />
+        android:layout_marginBottom="31dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/tt"
         android:layout_above="@+id/txtReg"
-        android:layout_alignEnd="@+id/imageView6"
-        android:layout_marginEnd="68dp" />
+        android:layout_centerHorizontal="true" />
 
         <TextView
         android:id="@+id/txtOff"
@@ -73,15 +70,15 @@
 
     <TextView
         android:id="@+id/txtReg"
-        android:textColor="#0597f1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Buat Akun "
-        android:textSize="16dip"
         android:layout_above="@+id/txtOff"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp" />
+        android:layout_marginBottom="34dp"
+        android:gravity="center"
+        android:text="Create Account"
+        android:textColor="#0597f1"
+        android:textSize="16dip" />
 
     <ImageView
         android:id="@+id/imageView6"
