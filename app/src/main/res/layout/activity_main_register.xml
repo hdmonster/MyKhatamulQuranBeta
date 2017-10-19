@@ -48,19 +48,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/laki_laki"
+        android:layout_marginLeft="@dimen/radioleft"
         android:layout_alignBaseline="@+id/radioButton2"
         android:layout_alignBottom="@+id/radioButton2"
         android:layout_alignStart="@+id/editText2" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/perempuan"
-        android:layout_above="@+id/editText2"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="33dp" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText2"
+            android:layout_alignEnd="@+id/editText"
+            android:layout_marginBottom="33dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginLeft="@dimen/radioleft"
+            android:text="@string/perempuan" />
     </RadioGroup>
     <TextView
         android:id="@+id/textView3"
