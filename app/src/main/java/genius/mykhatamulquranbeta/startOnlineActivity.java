@@ -18,6 +18,14 @@ public class startOnlineActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_online);
 
+        Button Graphp = (Button) findViewById(R.id.btn_grafik);
+        Graphp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                Intent Graphp= new Intent(startOnlineActivity.this,GrapichActivity.class);
+                startActivity(Graphp);
+            }
+        });
 
     }
 }

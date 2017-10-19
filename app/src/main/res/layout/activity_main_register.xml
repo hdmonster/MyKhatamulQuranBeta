@@ -7,128 +7,82 @@
     android:layout_height="match_parent"
     tools:context="genius.mykhatamulquranbeta.MainActivityRegister">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="19dp"
-        android:background="@drawable/exit" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/radioGroup2"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/editText6"
+        android:layout_alignStart="@+id/editText6">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text="@string/username"
-        android:layout_alignBaseline="@+id/editText"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_alignParentStart="true" />
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Male" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/radioButton"
-        android:layout_marginBottom="56dp"
-        android:layout_marginStart="21dp"
-        android:layout_toEndOf="@+id/textView"
-        android:background="@android:color/background_light"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/laki_laki"
-        android:layout_alignBaseline="@+id/radioButton2"
-        android:layout_alignBottom="@+id/radioButton2"
-        android:layout_alignStart="@+id/editText2" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/perempuan"
-        android:layout_above="@+id/editText2"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="33dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/usia"
-        android:layout_alignBaseline="@+id/editText2"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignEnd="@+id/textView" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
-        android:layout_alignStart="@+id/editText"
-        android:layout_marginBottom="25dp"
-        android:background="@android:color/background_light"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:layout_alignBaseline="@+id/editText3"
-        android:layout_alignBottom="@+id/editText3"
-        android:layout_alignEnd="@+id/textView3" />
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="Female" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView6"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_marginBottom="31dp"
-        android:background="@android:color/background_light"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="134dp"
         android:ems="10"
-        android:inputType="textPassword"
-        tools:ignore="LabelFor" />
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginBottom="17dp"
-        android:background="@android:color/background_light"
         android:ems="10"
+        android:hint="Age"
         android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/editText7"
+        android:layout_alignStart="@+id/editText6" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/editText6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email"
-        android:layout_alignBaseline="@+id/editText4"
-        android:layout_alignBottom="@+id/editText4"
-        android:layout_alignEnd="@+id/textView4" />
+        android:layout_marginTop="133dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <EditText
+        android:id="@+id/editText7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/n"
-        android:layout_marginBottom="50dp"
-        android:layout_above="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_alignStart="@+id/editText5"
+        android:layout_below="@+id/editText3"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioGroup2"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_marginTop="24dp"
+        android:text="Create" />
 
 </RelativeLayout>
