@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.login_activity);
 
-        TextView reg = (TextView) findViewById(R.id.txtReg);
+         TextView reg = (TextView) findViewById(R.id.txtReg);
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {

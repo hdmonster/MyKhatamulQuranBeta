@@ -26,23 +26,21 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_alignEnd="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/tp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="24dp"
-        android:background="@drawable/tp" />
+        android:layout_toEndOf="@+id/button4"
+        android:layout_marginStart="53dp" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="50dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/reading"
         android:layout_alignBottom="@+id/button3"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_below="@+id/textView9"
-        android:layout_marginStart="31dp"
-        android:background="@drawable/reading" />
+        android:layout_alignStart="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView7"
