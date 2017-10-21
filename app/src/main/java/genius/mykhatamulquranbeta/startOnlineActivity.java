@@ -35,5 +35,14 @@ public class startOnlineActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+
+        Button start = (Button) findViewById(R.id.btn_start);
+        start.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(startOnlineActivity.this, FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -31,7 +31,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".startOnlineActivity" />
         <activity android:name=".RecordActivity" />
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".FragmentActivity"
             android:label="@string/title_activity_fragment"
