@@ -30,4 +30,11 @@
     <string name="title_activity_quran">QuranActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="page1">koala1</string>
+    <string name="page2">koala2</string>
+    <string name="page3">koala3</string>
+
+    <string name="title_activity_fragment">FragmentActivity</string>
+
 </resources>

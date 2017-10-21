@@ -1,8 +1,8 @@
 package genius.mykhatamulquranbeta;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -26,5 +26,16 @@ public class startOfflineActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button start = (Button) findViewById(R.id.btn_start2);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(startOfflineActivity.this, FragmentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

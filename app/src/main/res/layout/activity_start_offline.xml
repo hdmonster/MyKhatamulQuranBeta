@@ -8,7 +8,7 @@
     tools:context="genius.mykhatamulquranbeta.startOfflineActivity">
 
     <Button
-        android:id="@+id/btn_start1"
+        android:id="@+id/btn_start2"
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -19,7 +19,7 @@
         android:id="@+id/btn_online"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/btn_start1"
+        android:layout_below="@+id/btn_start2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
         android:background="@drawable/online" />

@@ -1,24 +1,26 @@
 package genius.mykhatamulquranbeta;
 
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
 
-public class QuranActivity extends AppCompatActivity {
+import genius.mykhatamulquranbeta.Fragment.page1;
+import genius.mykhatamulquranbeta.Fragment.page2;
+import genius.mykhatamulquranbeta.Fragment.page3;
+
+public class FragmentActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -38,7 +40,7 @@ public class QuranActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quran);
+        setContentView(R.layout.activity_fragment);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -66,7 +68,7 @@ public class QuranActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_quran, menu);
+        getMenuInflater().inflate(R.menu.menu_, menu);
         return true;
     }
 
@@ -113,7 +115,7 @@ public class QuranActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_quran, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
@@ -132,9 +134,20 @@ public class QuranActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    page1 koala1 = new page1();
+                    return koala1;
+                case 1:
+                    page2 koala2 = new page2();
+                    return koala2;
+                case 3:
+                    page3 koala3 = new page3();
+                    return koala3;
+
+
+            }
+            return null;
         }
 
         @Override
