@@ -2,7 +2,6 @@ package genius.mykhatamulquranbeta;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +41,6 @@ public class MainActivityRegister extends AppCompatActivity {
                 SendData();
             }
         });
-
     }
 
     public void SendData()
@@ -63,7 +61,7 @@ public class MainActivityRegister extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         System.out.println(response);
-                        Toast.makeText(MainActivityRegister.this,"The Account Has been Created",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivityRegister.this,"The Account Has Been Created",Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -88,33 +86,5 @@ public class MainActivityRegister extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
-    boolean doubleBackToExitPressedOnce = false;
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finishAffinity();
-                finish();
-                System.exit(0);
-            }
-        }, 2000);
-    }
-
 
 }
