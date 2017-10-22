@@ -34,6 +34,14 @@
     <string name="page1">koala1</string>
     <string name="page2">koala2</string>
     <string name="page3">koala3</string>
+    <string name="page4">koala4</string>
+    <string name="page5">koala5</string>
+    <string name="page6">koala6</string>
+    <string name="page7">koala7</string>
+    <string name="page8">koala8</string>
+    <string name="page9">koala9</string>
+    <string name="page10">koala10</string>
+
 
     <string name="title_activity_fragment">FragmentActivity</string>
 

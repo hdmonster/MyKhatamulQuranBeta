@@ -40,7 +40,7 @@ public class startOnlineActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
-                Intent intent = new Intent(startOnlineActivity.this, FragmentActivity.class);
+                Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

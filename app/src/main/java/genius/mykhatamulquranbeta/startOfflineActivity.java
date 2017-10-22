@@ -31,7 +31,7 @@ public class startOfflineActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent intent = new Intent(startOfflineActivity.this, FragmentActivity.class);
+                Intent intent = new Intent(startOfflineActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
