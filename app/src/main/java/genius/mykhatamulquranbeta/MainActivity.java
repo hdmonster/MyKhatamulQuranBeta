@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 public class MainActivity extends Activity {
+
     ViewPager viewPager;
     CustomSwipeAdpter adpter;
 
@@ -17,8 +18,18 @@ public class MainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        viewPager = (ViewPager)findViewById(R.id.view_page);
+        viewPager = (ViewPager) findViewById(R.id.view_page);
         adpter = new CustomSwipeAdpter(this);
         viewPager.setAdapter(adpter);
+        viewPager.setCurrentItem(adpter.getCount() - 1);
     }
-}
+
+
+
+
+    }
+
+
+
+
+
