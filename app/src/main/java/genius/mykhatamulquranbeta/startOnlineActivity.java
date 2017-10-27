@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class startOnlineActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,15 +18,11 @@ public class startOnlineActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_online);
+    }
+    public void openRec(View view){
+        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+        startActivity(openRec);
 
-        Button rec = (Button) findViewById(R.id.btn_record);
-        rec.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(startOnlineActivity.this, RecordActivity.class);
-                startActivity(intent);
-            }
-        });
 
         /*Button graphics = (Button) findViewById(R.id.btn_grafik);
         graphics.setOnClickListener(new View.OnClickListener() {
@@ -44,5 +41,7 @@ public class startOnlineActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 }
