@@ -67,7 +67,7 @@ public class MainActivityRegister extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivityRegister.this,"Error",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivityRegister.this,"Network error",Toast.LENGTH_LONG).show();
                     }
                 }){
             @Override

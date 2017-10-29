@@ -1,5 +1,6 @@
 package genius.mykhatamulquranbeta;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,7 +12,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import genius.mykhatamulquranbeta.helper.SessionManager;
+
 public class LoginActivity extends AppCompatActivity {
+
+    private Context context;
+    SessionManager session;
 
 
     @Override
@@ -21,6 +27,9 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.login_activity);
+        context = LoginActivity.this;
+
+        session = new SessionManager(context);
 
         TextView reg = (TextView) findViewById(R.id.txtReg);
         reg.setOnClickListener(new View.OnClickListener() {
