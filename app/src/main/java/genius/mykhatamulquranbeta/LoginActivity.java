@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import genius.mykhatamulquranbeta.helper.SessionManager;
 
-public class nnn LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private Context context;
     SessionManager session;
