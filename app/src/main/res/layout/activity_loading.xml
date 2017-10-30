@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="genius.mykhatamulquranbeta.LoadingActivity"
-    android:background="@drawable/th">
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/n" />
+        android:src="@drawable/logo" />
 
     <ProgressBar
         android:id="@+id/progressBar"

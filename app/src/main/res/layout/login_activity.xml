@@ -6,7 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/leaf"
+    android:background="@drawable/background"
     tools:context="genius.mykhatamulquranbeta.startOfflineActivity">
 
 
@@ -23,8 +23,6 @@
         android:layout_alignParentStart="true"/>
 
 
-
-
     <EditText
         android:id="@+id/username"
         android:layout_width="290dp"
@@ -32,6 +30,7 @@
         android:layout_above="@+id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="11dp"
+        android:background="@android:color/holo_red_light"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName" />
@@ -43,6 +42,7 @@
         android:layout_above="@+id/btnLogin"
         android:layout_alignStart="@+id/username"
         android:layout_marginBottom="31dp"
+        android:background="@android:color/holo_red_light"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -52,20 +52,22 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/tt"
+        android:background="@drawable/lg"
         android:layout_above="@+id/txtReg"
         android:layout_centerHorizontal="true" />
 
-        <TextView
+    <TextView
         android:id="@+id/txtOff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Offline Mode"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp"
         android:gravity="center"
-        android:textSize="16dip"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="46dp" />
+        android:text="Offline Mode"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textSize="16dip" />
 
 
     <TextView
@@ -85,8 +87,7 @@
         android:layout_width="360dp"
         android:layout_height="190dp"
         android:layout_marginTop="15dp"
-        app:srcCompat="@drawable/n"
-        android:layout_alignTop="@+id/textView"
+        app:srcCompat="@drawable/logo"
         android:layout_centerHorizontal="true" />
 
 
