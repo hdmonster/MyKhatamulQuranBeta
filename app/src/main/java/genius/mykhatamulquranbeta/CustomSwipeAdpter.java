@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CustomSwipeAdpter extends PagerAdapter {
+
+
     private int[] image_resources = new int[]{
 
             R.drawable.a604, R.drawable.a603, R.drawable.a602, R.drawable.a601,
@@ -38,7 +37,7 @@ public class CustomSwipeAdpter extends PagerAdapter {
             R.drawable.a420, R.drawable.a419, R.drawable.a418, R.drawable.a417, R.drawable.a416, R.drawable.a415, R.drawable.a414, R.drawable.a413, R.drawable.a412, R.drawable.a411,
             R.drawable.a410, R.drawable.a409, R.drawable.a408, R.drawable.a407, R.drawable.a406, R.drawable.a405, R.drawable.a404, R.drawable.a403, R.drawable.a402, R.drawable.a401,
 
-            R.drawable.a400,R.drawable.a399,  R.drawable.a398, R.drawable.a397, R.drawable.a396, R.drawable.a395, R.drawable.a394, R.drawable.a393, R.drawable.a392, R.drawable.a391,
+            R.drawable.a400, R.drawable.a399, R.drawable.a398, R.drawable.a397, R.drawable.a396, R.drawable.a395, R.drawable.a394, R.drawable.a393, R.drawable.a392, R.drawable.a391,
             R.drawable.a390, R.drawable.a389, R.drawable.a388, R.drawable.a387, R.drawable.a386, R.drawable.a385, R.drawable.a384, R.drawable.a383, R.drawable.a382, R.drawable.a381,
             R.drawable.a380, R.drawable.a379, R.drawable.a378, R.drawable.a377, R.drawable.a376, R.drawable.a375, R.drawable.a374, R.drawable.a373, R.drawable.a372, R.drawable.a371,
             R.drawable.a370, R.drawable.a369, R.drawable.a368, R.drawable.a367, R.drawable.a366, R.drawable.a365, R.drawable.a364, R.drawable.a363, R.drawable.a362, R.drawable.a361,
@@ -85,6 +84,10 @@ public class CustomSwipeAdpter extends PagerAdapter {
 
 
     };
+
+
+
+
     private Context ctx;
     private LayoutInflater layoutInflater;
 
@@ -117,7 +120,5 @@ public class CustomSwipeAdpter extends PagerAdapter {
         container.removeView((LinearLayout) object);
     }
 
-    List<String> strList1 = new ArrayList<String>();
-    ArrayList<String> strList2 = new ArrayList<String>();
+     }
 
-}

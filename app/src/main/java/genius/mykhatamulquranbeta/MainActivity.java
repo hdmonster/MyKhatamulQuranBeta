@@ -2,6 +2,7 @@ package genius.mykhatamulquranbeta;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -23,10 +24,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
+import genius.mykhatamulquranbeta.helper.SessionManager;
+import genius.mykhatamulquranbeta.util.BookmarksManager;
 import genius.mykhatamulquranbeta.util.QuranSettings;
 
 import static android.Manifest.permission.RECORD_AUDIO;
@@ -38,7 +45,9 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
 public class MainActivity extends AppCompatActivity {
 
+    SessionManager session;
     protected SharedPreferences prefs;
+    private Context context;
 
     ViewPager viewPager;
     CustomSwipeAdpter adpter;
@@ -128,6 +137,9 @@ public class MainActivity extends AppCompatActivity {
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Button book;
 
+        context = MainActivity.this;
+        session = new SessionManager(context);
+
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_page);
         adpter = new CustomSwipeAdpter(this);
@@ -135,16 +147,20 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setCurrentItem(adpter.getCount() - 1);
 
         book = (Button) findViewById(R.id.btnBook);
-        book.setOnClickListener(new View.OnClickListener(){
+        book.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
 
-
+                Intent intent = new Intent(getApplicationContext(), BookmarksManager.class);
+                startActivityForResult(intent, ApplicationConstants.QURAN_VIEW_CODE);
 
             }
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                //params.put(BookmarksActivity.page);
+                return params;
+            }
         });
-
-
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);

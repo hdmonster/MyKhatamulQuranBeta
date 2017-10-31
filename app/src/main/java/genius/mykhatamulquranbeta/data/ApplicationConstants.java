@@ -32,7 +32,7 @@ public class ApplicationConstants {
 	public static final int JUMP_DIALOG = 1;
 	
 	// Preferences Key
-	public static final String PREFERNCES = "QuranAndroid_Settings";
+	public static final String PREFERNCES = "MyKhataman_Settings";
 	
 	// Settings Key
 	public static final String PREF_USE_ARABIC_NAMES = "useArabicNames";

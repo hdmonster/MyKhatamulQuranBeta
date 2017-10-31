@@ -25,6 +25,7 @@ import genius.mykhatamulquranbeta.util.BookmarksManager;
 public class BookmarksActivity extends MainActivity {
 
 	private static final int CONTEXT_MENU_REMOVE = 0;
+	public static String page;
 
 	@RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
 	@Override
@@ -34,7 +35,7 @@ public class BookmarksActivity extends MainActivity {
 		BookmarksManager.load(prefs);
 		showBookmarks();
 	}
-
+//nampilin bookmark di list
 	private void showBookmarks() {
 		ArrayList< Map<String, String> > bookmarkList = new ArrayList< Map<String, String> >();
 		
@@ -51,7 +52,7 @@ public class BookmarksActivity extends MainActivity {
 		int[] to = new int[]{ R.id.sura_title };
 		
 		ListView list = (ListView)findViewById(R.id.lstBookmarks);
-
+//nampilin keterangan page yg bookmark
 		SimpleAdapter suraAdapter = new SimpleAdapter(this, bookmarkList, R.layout.quran_row, from, to);
 		list.setAdapter(suraAdapter);
 		list.setOnItemClickListener(new OnItemClickListener() {
