@@ -21,17 +21,17 @@
             tools:ignore="UselessParent">
 
         </LinearLayout>
-        <Button
-            android:id="@+id/btnBook"
-            android:background="@drawable/bookmark"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="280dp"
-            />
+
 
 
     </FrameLayout>
-
+    <Button
+        android:id="@+id/btnBook"
+        android:background="@drawable/bookmark"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="280dp"
+        />
     <android.support.v4.view.ViewPager
         android:id="@+id/view_page"
         android:layout_width="match_parent"

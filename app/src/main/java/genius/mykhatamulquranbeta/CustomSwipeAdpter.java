@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CustomSwipeAdpter extends PagerAdapter {
     private int[] image_resources = new int[]{
 
@@ -113,4 +116,8 @@ public class CustomSwipeAdpter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
     }
+
+    List<String> strList1 = new ArrayList<String>();
+    ArrayList<String> strList2 = new ArrayList<String>();
+
 }

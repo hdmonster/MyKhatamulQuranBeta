@@ -1,12 +1,18 @@
 package genius.mykhatamulquranbeta;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -20,6 +26,9 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.Random;
 
+import genius.mykhatamulquranbeta.data.ApplicationConstants;
+import genius.mykhatamulquranbeta.util.QuranSettings;
+
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
@@ -29,6 +38,8 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
 public class MainActivity extends AppCompatActivity {
 
+    protected SharedPreferences prefs;
+
     ViewPager viewPager;
     CustomSwipeAdpter adpter;
 
@@ -36,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     String AudioSavePathInDevice = null;
     MediaRecorder mediaRecorder ;
     Random random ;
-    String RandomAudioFileName = "Hello";
+    String RandomAudioFileName = "RecordAnda";
     public static final int RequestPermissionCode = 1;
     MediaPlayer mediaPlayer ;
 
@@ -110,15 +121,29 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Button book;
 
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_page);
         adpter = new CustomSwipeAdpter(this);
         viewPager.setAdapter(adpter);
         viewPager.setCurrentItem(adpter.getCount() - 1);
+
+        book = (Button) findViewById(R.id.btnBook);
+        book.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View arg0) {
+
+
+
+            }
+        });
+
 
 
         mVisible = true;
@@ -250,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
                 result1 == PackageManager.PERMISSION_GRANTED;
     }
 
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -302,4 +328,35 @@ public class MainActivity extends AppCompatActivity {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
-}
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case ApplicationConstants.BOOKMARKS_CODE:
+                if (resultCode == Activity.RESULT_OK) {
+                    Integer lastPage = data.getIntExtra("page", ApplicationConstants.PAGES_FIRST);
+                    jumpTo(lastPage);
+                }
+                break;
+        }
+    }
+    public void jumpTo(int page) {
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        QuranSettings.load(prefs);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        QuranSettings.save(prefs);
+    }
+    }
+

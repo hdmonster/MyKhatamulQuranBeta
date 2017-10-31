@@ -1,12 +1,14 @@
 package genius.mykhatamulquranbeta;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import genius.mykhatamulquranbeta.data.ApplicationConstants;
 
 public class startOnlineActivity extends AppCompatActivity {
 
@@ -18,20 +20,16 @@ public class startOnlineActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_online);
-    }
-    public void openRec(View view){
-        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
-        startActivity(openRec);
 
-
-        /*Button graphics = (Button) findViewById(R.id.btn_grafik);
-        graphics.setOnClickListener(new View.OnClickListener() {
+        Button graf = (Button) findViewById(R.id.btn_grafik);
+        graf.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(startOnlineActivity.this, GrapicsActivity.class);
+            public void onClick (View arg0) {
+                Intent intent = new Intent(startOnlineActivity.this, Grafik.class);
                 startActivity(intent);
             }
-        });*/
+        });
+
 
         Button start = (Button) findViewById(R.id.btn_start);
         start.setOnClickListener(new View.OnClickListener(){
@@ -42,6 +40,22 @@ public class startOnlineActivity extends AppCompatActivity {
             }
         });
 
+        Button book = (Button) findViewById(R.id.btn_continue);
+        book.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(getApplicationContext(), BookmarksActivity.class);
+                startActivityForResult(intent, ApplicationConstants.BOOKMARKS_CODE);
+            }
+        });
     }
+    public void openRec(View view) {
+        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+        startActivity(openRec);
+
+    }
+
+
+
 
 }

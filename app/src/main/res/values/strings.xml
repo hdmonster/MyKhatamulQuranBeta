@@ -42,6 +42,9 @@
     <string name="page9">koala9</string>
     <string name="page10">koala10</string>
 
+    <string name="menu_bookmarks">Bookmarks</string>
+    <string name="menu_bookmarks_remove">Remove</string>
+
 
     <string name="title_activity_fragment">FragmentActivity</string>
 
