@@ -53,7 +53,7 @@ public class MainActivityRegister extends AppCompatActivity {
 
                 if(password.equals("")){
                     Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
-                }else if(user.equals("")||username.equals("")||email.equals("")){
+                }else if(user.equals("")||username.equals("")||password.equals("")||email.equals("")){
                     Toast.makeText(MainActivityRegister.this, "Please fill the available form", Toast.LENGTH_SHORT).show();
                 }else{
                     startActivity(intent);
@@ -64,8 +64,7 @@ public class MainActivityRegister extends AppCompatActivity {
         });
     }
 
-    public void SendData(){}
-
+    public void SendData(){
     final EditText Username =(EditText) findViewById(R.id.userku);
     final EditText Password =(EditText) findViewById(R.id.passwordku);
     final EditText Email =(EditText) findViewById(R.id.emailku);
@@ -75,7 +74,7 @@ public class MainActivityRegister extends AppCompatActivity {
     final String username = Username.getText().toString();
     final String password = Password.getText().toString();
     final String email = Email.getText().toString();
-    {
+
 
 
 
