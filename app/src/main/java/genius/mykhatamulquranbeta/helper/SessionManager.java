@@ -115,4 +115,5 @@ public class SessionManager {
     public boolean isLoggedIn() {
         return pref.getBoolean(IS_LOGIN, false);
     }
+
 }

@@ -38,7 +38,7 @@ public class SessionManagerBook {
         editor = pref.edit();
     }
 
-    public void createLoginSession(String bookmark){
+    public void createBookmarkSession(String bookmark){
         // Storing bookmark value as TRUE
         editor.putBoolean(IS_CONT, true);
 

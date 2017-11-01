@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
 
-public class BookmarksManager {
+public class BookmarksManager{
 	
 	private static final String SEPARATOR = ",";
 	private static BookmarksManager instance;

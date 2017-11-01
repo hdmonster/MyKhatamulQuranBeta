@@ -37,8 +37,10 @@
         <activity android:name=".Grafik"/>
         <activity android:name=".BookmarksActivity"/>
 
+        
+
     </application>
 
-    <uses-library android:name="com.genius.mykhatamulquranbeta.data.ApplicationConstants"/>
+    <uses-library android:name="genius.mykhatamulquranbeta.data.ApplicationConstants"/>
 
 </manifest>

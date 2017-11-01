@@ -33,7 +33,6 @@ import java.util.Random;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
 import genius.mykhatamulquranbeta.helper.SessionManager;
-import genius.mykhatamulquranbeta.util.BookmarksManager;
 import genius.mykhatamulquranbeta.util.QuranSettings;
 
 import static android.Manifest.permission.RECORD_AUDIO;
@@ -48,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     SessionManager session;
     protected SharedPreferences prefs;
     private Context context;
+
+    String createBookmarkSession;
 
     ViewPager viewPager;
     CustomSwipeAdpter adpter;
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Button book;
+        final Button book;
 
         context = MainActivity.this;
         session = new SessionManager(context);
@@ -151,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
 
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(getApplicationContext(), BookmarksManager.class);
-                startActivityForResult(intent, ApplicationConstants.QURAN_VIEW_CODE);
+                Intent intent = new Intent();
+                startActivity(intent);
 
             }
             protected Map<String, String> getParams() throws AuthFailureError {
