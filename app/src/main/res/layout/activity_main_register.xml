@@ -21,13 +21,27 @@
         android:id="@+id/editText"
         android:layout_width="290dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="22dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:hint="Nama"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor"
+        android:layout_above="@+id/editText2"
+        android:layout_alignEnd="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
         android:layout_above="@+id/editText3"
         android:layout_alignStart="@+id/editText3"
         android:layout_marginBottom="19dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Username"
         android:ems="10"
+        android:hint="Username"
         android:inputType="textPersonName"
         tools:ignore="LabelFor" />
 
