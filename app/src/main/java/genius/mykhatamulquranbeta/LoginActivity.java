@@ -1,6 +1,5 @@
 package genius.mykhatamulquranbeta;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,53 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import genius.mykhatamulquranbeta.helper.SessionManager;
-
 public class LoginActivity extends AppCompatActivity {
-
-    private Context context;
-    SessionManager session;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.login_activity);
-        context = LoginActivity.this;
-
-        session = new SessionManager(context);
-
-        TextView reg = (TextView) findViewById(R.id.txtReg);
-        reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
-                startActivity(intent);
-            }
-        });
-
-        TextView off = (TextView) findViewById(R.id.txtOff);
-        off.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(LoginActivity.this, startOfflineActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button login = (Button) findViewById(R.id.btnLogin);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(LoginActivity.this, startOnlineActivity.class);
-                startActivity(intent);
-            }
-        });
-
-    }
 
     boolean doubleBackToExitPressedOnce = false;
 
@@ -88,5 +41,32 @@ public class LoginActivity extends AppCompatActivity {
         }, 2000);
 
 
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.login_activity);
+
+        Button log = (Button) findViewById(R.id.btnLogin);
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(LoginActivity.this, startOnlineActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView reg = (TextView) findViewById(R.id.txtReg);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
+                startActivity(intent);
+            }
+        });
     }
 }
