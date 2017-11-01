@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -20,13 +19,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivityRegister extends AppCompatActivity {
-    final String GENDER = "gender";
-    public static final String AGE = "umur";
-    public static final String EMAIL = "email";
-    public static final String PASSWORD = "pass";
 
-    private static final String URL = "http://mysonschool.web.id/KhatamulQuran/Register.php";
+    private static final String URL = "http://ubkmart.com/MyKhatamulPhp/reg.php";
+
+    public static final String NAME = "name";
     public static final String USERNAME = "user";
+    public static final String PASSWORD = "pass";
+    public static final String EMAIL = "email";
+
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,22 +47,29 @@ public class MainActivityRegister extends AppCompatActivity {
 
     public void SendData()
     {
-        final EditText Username =(EditText) findViewById(R.id.editText);
-        final EditText Age =(EditText) findViewById(R.id.editText2);
-        final EditText Password =(EditText) findViewById(R.id.editText3);
-        final EditText Email =(EditText) findViewById(R.id.editText4);
+        final EditText Username =(EditText) findViewById(R.id.userku);
+        final EditText Password =(EditText) findViewById(R.id.passwordku);
+        //final EditText Confirm = (EditText) findViewById(R.id.confirku);
+        final EditText Email =(EditText) findViewById(R.id.emailku);
+        final EditText User =(EditText) findViewById(R.id.namaku);
+
+        final String user = User.getText().toString().trim();
         final String username = Username.getText().toString().trim();
-        final String age = Age.getText().toString().trim();
         final String password = Password.getText().toString().trim();
         final String email = Email.getText().toString().trim();
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        System.out.println(response);
-                        Toast.makeText(MainActivityRegister.this,"The Account Has Been Created",Toast.LENGTH_LONG).show();
-                    }
+
+                            System.out.println(response);
+                            Toast.makeText(MainActivityRegister.this, "Account registered, please login", Toast.LENGTH_LONG).show();
+
+
+                        }
+
                 },
                 new Response.ErrorListener() {
                     @Override
@@ -71,8 +80,8 @@ public class MainActivityRegister extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("user",username);
-                params.put("umur", age);
+                params.put("user", username);
+                params.put("name", user);
                 params.put("email", email);
                 params.put("pass", password);
                 return params;

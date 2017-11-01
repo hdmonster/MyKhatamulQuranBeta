@@ -27,9 +27,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/userku"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp" />
+        android:layout_marginBottom="25dp" />
 
     <EditText
         android:id="@+id/userku"
@@ -42,23 +42,11 @@
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
 
-        android:layout_marginBottom="30dp"
-        android:layout_above="@+id/confirku"
-        android:layout_alignStart="@+id/namaku" />
-
-    <EditText
-        android:id="@+id/confirku"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Confirm Password"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:ignore="LabelFor"
-        android:layout_marginBottom="23dp"
         android:layout_above="@+id/passwordku"
-        android:layout_alignStart="@+id/userku" />
+        android:layout_alignStart="@+id/namaku"
+        android:layout_marginBottom="19dp" />
+
+
 
     <EditText
         android:id="@+id/passwordku"
@@ -70,8 +58,22 @@
         android:hint="Password"
         android:inputType="textPassword"
         tools:ignore="LabelFor"
+        android:layout_above="@+id/confirku"
+        android:layout_alignStart="@+id/userku"
+        android:layout_marginBottom="22dp" />
+
+    <EditText
+        android:id="@+id/confirku"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:hint="Confirm Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        tools:ignore="LabelFor"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/confirku" />
+        android:layout_alignStart="@+id/passwordku" />
 
     <EditText
         android:id="@+id/emailku"
@@ -83,8 +85,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_below="@+id/passwordku"
-        android:layout_alignStart="@+id/passwordku"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/confirku"
+        android:layout_alignStart="@+id/confirku" />
 
 </RelativeLayout>

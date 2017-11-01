@@ -24,11 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
@@ -156,11 +152,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-            protected Map<String, String> getParams() throws AuthFailureError {
+           /* protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 //params.put(BookmarksActivity.page);
                 return params;
-            }
+            }*/
         });
 
         mVisible = true;
