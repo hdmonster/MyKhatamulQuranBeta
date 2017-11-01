@@ -32,34 +32,18 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/editText4"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_marginBottom="14dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Umur"
-        android:backgroundTintMode="src_over"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColorLink="@android:color/white"
-        tools:ignore="LabelFor" />
-
-    <EditText
         android:id="@+id/editText3"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/radioButton"
-        android:layout_alignEnd="@+id/imageView3"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
         android:hint="Password"
         android:ems="10"
         android:inputType="textPassword"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:layout_above="@+id/editText4"
+        android:layout_alignEnd="@+id/imageView3" />
 
     <EditText
         android:id="@+id/editText4"
@@ -83,27 +67,5 @@
         android:layout_alignEnd="@+id/group1"
         android:visibility="visible"
         app:srcCompat="@drawable/logo" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="105dp"
-        android:layout_marginRight="30dp"
-        android:text="@string/laki_laki"
-        android:layout_above="@+id/editText2"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="@string/perempuan"
-        android:layout_marginEnd="29dp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignEnd="@+id/imageView3" />
 
 </RelativeLayout>

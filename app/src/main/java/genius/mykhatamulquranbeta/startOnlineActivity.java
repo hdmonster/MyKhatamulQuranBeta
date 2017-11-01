@@ -8,7 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import genius.mykhatamulquranbeta.data.ApplicationConstants;
+
 
 public class startOnlineActivity extends AppCompatActivity {
 
@@ -40,14 +40,7 @@ public class startOnlineActivity extends AppCompatActivity {
             }
         });
 
-        Button book = (Button) findViewById(R.id.btn_continue);
-        book.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(getApplicationContext(), BookmarksActivity.class);
-                startActivityForResult(intent, ApplicationConstants.BOOKMARKS_CODE);
-            }
-        });
+
     }
     public void openRec(View view) {
         Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
