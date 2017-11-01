@@ -26,6 +26,7 @@ public class MainActivityRegister extends AppCompatActivity {
     public static final String USERNAME = "username";
     public static final String PASSWORD = "pass";
     public static final String EMAIL = "email";
+    public static final String CONFIRM = "confirm";
 
 
 
@@ -37,29 +38,33 @@ public class MainActivityRegister extends AppCompatActivity {
 
         final EditText Username =(EditText) findViewById(R.id.userku);
         final EditText Password =(EditText) findViewById(R.id.passwordku);
+        final EditText Confirm = (EditText) findViewById(R.id.confirku);
         final EditText Email =(EditText) findViewById(R.id.emailku);
         final EditText User =(EditText) findViewById(R.id.namaku);
 
-        final String user = User.getText().toString();
-        final String username = Username.getText().toString();
-        final String password = Password.getText().toString();
-        final String email = Email.getText().toString();
 
         Button reg = (Button) findViewById(R.id.button);
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                String user = User.getText().toString();
+                String username = Username.getText().toString();
+                String confirm = Confirm.getText().toString();
+                String email = Email.getText().toString();
+                String password = Password.getText().toString();
+
                 Intent intent = new Intent(MainActivityRegister.this, LoginActivity.class);
 
-                if(password.equals("")){
-                    Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
-                }else if(user.equals("")||username.equals("")||password.equals("")||email.equals("")){
+                if(user.equals("")||username.equals("")||password.equals("")||email.equals("")){
                     Toast.makeText(MainActivityRegister.this, "Please fill the available form", Toast.LENGTH_SHORT).show();
+                }else if(!confirm.equals(password)){
+                    Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
+
                 }else{
                     startActivity(intent);
                     SendData();
-                }
 
+                }
             }
         });
     }
@@ -69,11 +74,13 @@ public class MainActivityRegister extends AppCompatActivity {
     final EditText Password =(EditText) findViewById(R.id.passwordku);
     final EditText Email =(EditText) findViewById(R.id.emailku);
     final EditText User =(EditText) findViewById(R.id.namaku);
+    final EditText Confirm = (EditText) findViewById(R.id.confirku);
 
     final String user = User.getText().toString();
     final String username = Username.getText().toString();
     final String password = Password.getText().toString();
     final String email = Email.getText().toString();
+    final String confirm = Confirm.getText().toString();
 
 
 
@@ -103,6 +110,7 @@ public class MainActivityRegister extends AppCompatActivity {
                 params.put(NAME, user);
                 params.put(EMAIL, email);
                 params.put(PASSWORD, password);
+                params.put(CONFIRM, confirm);
                 return params;
             }
 
