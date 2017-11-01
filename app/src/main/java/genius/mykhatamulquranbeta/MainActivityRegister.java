@@ -30,26 +30,13 @@ public class MainActivityRegister extends AppCompatActivity {
 
 
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_register);
 
-        Button reg = (Button) findViewById(R.id.button);
-        reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(MainActivityRegister.this, LoginActivity.class);
-                startActivity(intent);
-                SendData();
-            }
-        });
-    }
-
-    public void SendData()
-    {
         final EditText Username =(EditText) findViewById(R.id.userku);
         final EditText Password =(EditText) findViewById(R.id.passwordku);
-        //final EditText Confirm = (EditText) findViewById(R.id.confirku);
         final EditText Email =(EditText) findViewById(R.id.emailku);
         final EditText User =(EditText) findViewById(R.id.namaku);
 
@@ -57,6 +44,39 @@ public class MainActivityRegister extends AppCompatActivity {
         final String username = Username.getText().toString();
         final String password = Password.getText().toString();
         final String email = Email.getText().toString();
+
+        Button reg = (Button) findViewById(R.id.button);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(MainActivityRegister.this, LoginActivity.class);
+
+                if(password.equals("")){
+                    Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
+                }else if(user.equals("")||username.equals("")||email.equals("")){
+                    Toast.makeText(MainActivityRegister.this, "Please fill the available form", Toast.LENGTH_SHORT).show();
+                }else{
+                    startActivity(intent);
+                    SendData();
+                }
+
+            }
+        });
+    }
+
+    public void SendData(){}
+
+    final EditText Username =(EditText) findViewById(R.id.userku);
+    final EditText Password =(EditText) findViewById(R.id.passwordku);
+    final EditText Email =(EditText) findViewById(R.id.emailku);
+    final EditText User =(EditText) findViewById(R.id.namaku);
+
+    final String user = User.getText().toString();
+    final String username = Username.getText().toString();
+    final String password = Password.getText().toString();
+    final String email = Email.getText().toString();
+    {
+
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
