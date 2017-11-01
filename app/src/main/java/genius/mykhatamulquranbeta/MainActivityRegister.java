@@ -23,7 +23,7 @@ public class MainActivityRegister extends AppCompatActivity {
     private static final String URL = "http://ubkmart.com/MyKhatamulPhp/reg.php";
 
     public static final String NAME = "name";
-    public static final String USERNAME = "user";
+    public static final String USERNAME = "username";
     public static final String PASSWORD = "pass";
     public static final String EMAIL = "email";
 
@@ -53,10 +53,10 @@ public class MainActivityRegister extends AppCompatActivity {
         final EditText Email =(EditText) findViewById(R.id.emailku);
         final EditText User =(EditText) findViewById(R.id.namaku);
 
-        final String user = User.getText().toString().trim();
-        final String username = Username.getText().toString().trim();
-        final String password = Password.getText().toString().trim();
-        final String email = Email.getText().toString().trim();
+        final String user = User.getText().toString();
+        final String username = Username.getText().toString();
+        final String password = Password.getText().toString();
+        final String email = Email.getText().toString();
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
@@ -80,10 +80,10 @@ public class MainActivityRegister extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put("user", username);
-                params.put("name", user);
-                params.put("email", email);
-                params.put("pass", password);
+                params.put(USERNAME, username);
+                params.put(NAME, user);
+                params.put(EMAIL, email);
+                params.put(PASSWORD, password);
                 return params;
             }
 
