@@ -46,12 +46,10 @@ public class MainActivityRegister extends AppCompatActivity {
     public void SendData()
     {
         final EditText Username =(EditText) findViewById(R.id.editText);
-        final RadioButton Gender =(RadioButton) findViewById(R.id.radioButton);
         final EditText Age =(EditText) findViewById(R.id.editText2);
         final EditText Password =(EditText) findViewById(R.id.editText3);
         final EditText Email =(EditText) findViewById(R.id.editText4);
         final String username = Username.getText().toString().trim();
-        final String gender = Gender.getText().toString().trim();
         final String age = Age.getText().toString().trim();
         final String password = Password.getText().toString().trim();
         final String email = Email.getText().toString().trim();
@@ -74,7 +72,6 @@ public class MainActivityRegister extends AppCompatActivity {
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
                 params.put("user",username);
-                params.put("gender", gender);
                 params.put("umur", age);
                 params.put("email", email);
                 params.put("pass", password);

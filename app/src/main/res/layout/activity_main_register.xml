@@ -18,68 +18,73 @@
         android:background="@drawable/create" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/namaku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="22dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
         android:hint="Nama"
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_above="@+id/editText2"
-        android:layout_alignEnd="@+id/imageView3" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/userku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginBottom="19dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/confirku"
+        android:layout_alignStart="@+id/namaku" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/confirku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="32dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Password"
+        android:hint="Confirm Password"
         android:ems="10"
         android:inputType="textPassword"
         tools:ignore="LabelFor"
-        android:layout_above="@+id/editText4"
-        android:layout_alignEnd="@+id/imageView3" />
+        android:layout_marginBottom="23dp"
+        android:layout_above="@+id/passwordku"
+        android:layout_alignStart="@+id/userku" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/passwordku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/button"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_marginBottom="17dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:ignore="LabelFor"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/confirku" />
+
+    <EditText
+        android:id="@+id/emailku"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
         android:background="@android:color/background_light"
         android:backgroundTint="@android:color/holo_red_light"
         android:hint="Email"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText"
-        android:layout_alignEnd="@+id/group1"
-        android:visibility="visible"
-        app:srcCompat="@drawable/logo" />
+        tools:ignore="LabelFor"
+        android:layout_below="@+id/passwordku"
+        android:layout_alignStart="@+id/passwordku"
+        android:layout_marginTop="12dp" />
 
 </RelativeLayout>
