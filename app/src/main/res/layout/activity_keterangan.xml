@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="320dp"
-        android:layout_height="150dp"
+        android:layout_width="900dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logokita"
         android:layout_below="@+id/textView5"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
+        android:layout_alignParentStart="true" />
 
 
     <TextView
@@ -26,56 +26,40 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="155dp"
-        android:layout_height="60dp"
-        android:background="@drawable/start"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@drawable/skip"
+        android:layout_marginBottom="44dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/textView10"
-        android:layout_marginBottom="28dp" />
+        android:layout_centerHorizontal="true" />
 
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="550dp"
-        android:layout_height="80dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageView2"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="15dp"
-        android:background="@android:color/transparent"
-        android:text="Dari Abi Umamah r.a katanya, aku mendengar Rasulullah s.a.w bersabda “Bacalah olehmu akan Al-Quran, sesungguhnya dia datang pada Hari Kiamat kelak memberi syafaat kepada tuannya”. – Hadis Riwayat Muslim."
-        android:textColor="@android:color/background_dark" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="550dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_below="@+id/textView10"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="46dp"
-        android:background="@android:color/transparent"
-        android:text="Dari Saidina Usman bin Affan r.a katanya, berkata Rasulullah s.a.w “Sebaik-baik kamu ialah seorang yang belajar Al-Quran dan mengajarnya” Hadith riwayat Bukhari."
-        android:textColor="@android:color/black" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="550dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView2"
-        android:layout_below="@+id/textView7"
-        android:layout_marginTop="26dp"
-        android:background="@android:color/transparent"
-        android:text="“ Bacalah olehmu akan al-Quran sesungguhnya ia akan datang pada hari qiamat memberi syafa’at kepada pembacanya” (Riwayat Muslim)"
-        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="155dp"
+        android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_alignTop="@+id/button3"
-        android:background="@drawable/tuto" />
+        android:background="@drawable/tutorial"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/imageView10"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="1000dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/hadist"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="22dp"
+        android:layout_above="@+id/imageView10"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/riwayat"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

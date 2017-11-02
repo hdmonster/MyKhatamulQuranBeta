@@ -14,11 +14,10 @@
         android:id="@+id/username"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/password"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:background="@android:color/holo_red_light"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="27dp"
+        android:background="@android:color/background_light"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName" />
@@ -27,10 +26,10 @@
         android:id="@+id/password"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/btnLogin"
         android:layout_alignStart="@+id/username"
-        android:layout_marginBottom="31dp"
-        android:background="@android:color/holo_red_light"
+        android:layout_below="@+id/username"
+        android:layout_marginTop="13dp"
+        android:background="@android:color/background_light"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword" />
@@ -40,63 +39,47 @@
         android:id="@+id/btnLogin"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="27dp"
-        android:background="@drawable/lg"
-        android:layout_above="@+id/txtReg"
+        android:background="@drawable/login"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/password"
         android:layout_alignStart="@+id/password"
-        android:layout_marginStart="20dp" />
+        android:layout_marginStart="43dp" />
 
-    <TextView
-        android:id="@+id/txtOff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="46dp"
-        android:gravity="center"
-        android:text="Offline Mode"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textColorLink="@android:color/holo_blue_dark"
-        android:textSize="16dip" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="1000dp"
+        android:layout_height="900dp"
+        android:layout_above="@+id/password"
+        android:layout_alignEnd="@+id/username"
+        android:layout_marginBottom="29dp"
+        app:srcCompat="@drawable/logokita" />
 
 
     <TextView
         android:id="@+id/txtReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/txtOff"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"
         android:gravity="center"
         android:text="Create Account"
-        android:textColor="#0597f1"
-        android:textSize="16dip" />
+        android:textColor="#B7A249"
+        android:textSize="16dip"
+        android:layout_marginStart="45dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_alignStart="@+id/btnLogin"
+        android:layout_marginTop="15dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/user"
-        android:layout_alignTop="@+id/username"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/pass"
-        android:layout_alignTop="@+id/password"
-        android:layout_alignStart="@+id/imageView" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="300dp"
+    <TextView
+        android:id="@+id/txtOff"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_alignBottom="@+id/username"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_marginBottom="16dp" />
+        android:gravity="center"
+        android:text="Offline Mode"
+        android:textColor="#B7A249"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textSize="16dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/txtReg"
+        android:layout_marginBottom="18dp" />
 
 
 </RelativeLayout>

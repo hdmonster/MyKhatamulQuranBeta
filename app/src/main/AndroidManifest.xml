@@ -13,9 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/logokita"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/logokita"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

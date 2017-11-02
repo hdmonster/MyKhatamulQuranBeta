@@ -9,7 +9,7 @@
     		  android:textColor="#F3F4E6"
     		  android:textSize="18sp" />
     <ImageView android:id="@+id/sura_icon_img" 
-    	android:src="@drawable/e"
+    	android:src="@drawable/skip"
     	android:layout_width="48dp"
     	android:layout_height="48dp"
     	android:scaleType="centerInside"

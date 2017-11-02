@@ -22,56 +22,91 @@
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Nama"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
+        android:hint="Nama"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_marginTop="130dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/emailku"
+        android:layout_alignStart="@+id/imageView13" />
 
 
     <EditText
         android:id="@+id/passwordku"
         android:layout_width="290dp"
         android:layout_height="40dp"
+        android:layout_alignStart="@+id/emailku"
+        android:layout_centerVertical="true"
         android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="@android:color/white"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPassword"
-        tools:ignore="LabelFor"
 
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/emailku" />
+        android:inputType="textPassword"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/confirku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Confirm Password"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:ignore="LabelFor"
-        android:layout_marginTop="21dp"
+        android:layout_alignStart="@+id/passwordku"
         android:layout_below="@+id/passwordku"
-        android:layout_alignStart="@+id/passwordku" />
+        android:layout_marginTop="21dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/emailku"
         android:layout_width="290dp"
         android:layout_height="40dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:hint="Email"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor"
         android:layout_above="@+id/passwordku"
         android:layout_alignStart="@+id/namaku"
-        android:layout_marginBottom="26dp" />
+        android:layout_marginBottom="26dp"
+        android:background="@android:color/background_light"
+        android:backgroundTint="@android:color/white"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        tools:ignore="LabelFor" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        app:srcCompat="@drawable/user"
+        android:layout_alignBottom="@+id/emailku"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/email"
+        android:layout_alignTop="@+id/namaku"
+        android:layout_alignStart="@+id/imageView7"
+        android:layout_marginTop="17dp" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/padlock"
+        android:layout_alignTop="@+id/imageView8"
+        android:layout_alignStart="@+id/imageView7" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/register"
+        android:layout_above="@+id/imageView8"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
