@@ -59,7 +59,6 @@ public class MainActivityRegister extends AppCompatActivity {
                     Toast.makeText(MainActivityRegister.this, "Please fill the available form", Toast.LENGTH_SHORT).show();
                 }else if(!confirm.equals(password)){
                     Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
-
                 }else{
                     startActivity(intent);
                     SendData();
