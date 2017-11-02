@@ -42,22 +42,20 @@
         android:id="@+id/btnStop"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="184dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:backgroundTint="@android:color/black"
-        android:text="STOP" />
+        android:background="@drawable/stop" />
 
     <Button
         android:id="@+id/btnRec"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="184dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="184dp"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text="RECORD" />
+        android:background="@drawable/mulai" />
 
 
 
