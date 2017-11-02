@@ -10,7 +10,8 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <LinearLayout
+        <LinearLayout5
+
             android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
             android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
-        </LinearLayout>
+        </LinearLayout5>
 
 
 
