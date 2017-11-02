@@ -23,13 +23,9 @@ public class MainActivityRegister extends AppCompatActivity {
     private static final String URL = "http://ubkmart.com/MyKhatamulPhp/reg.php";
 
     public static final String NAME = "name";
-    public static final String USERNAME = "username";
     public static final String PASSWORD = "pass";
     public static final String EMAIL = "email";
     public static final String CONFIRM = "confirm";
-
-
-
 
 
     protected void onCreate(Bundle savedInstanceState) {
