@@ -29,7 +29,7 @@ import genius.mykhatamulquranbeta.list.loginVar;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText user,pass;
-    private ProgressDialog progressDialog;
+
     private Context context;
     SessionManager session;
     Button login;
@@ -74,7 +74,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        progressDialog = new ProgressDialog(context);
         user = (EditText) findViewById(R.id.username);
         pass = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.btnLogin);
@@ -88,8 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (user1.equals("") || pass1.equals("")) {
                     Toast.makeText(context, "Fill the available form", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
-                    //loggingIn(user1, pass1);
+                   // Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
+                    loggingIn(user1, pass1);
                 }
             }
         });
@@ -97,25 +96,25 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loggingIn( final String UserLogin,  final String PasswordLogin  ){
 
-        progressDialog.setMessage("Loading...");
-        showDialog();
+       // progressDialog.setMessage("Loading...");
+//        showDialog();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, loginVar.LOGIN_URL, new Response.Listener<String>()
         {
             @Override
             public void onResponse(String response){
 
                 if(response.contains(loginVar.LOGIN_SUCCESS)){
-                    hideDialog();
+
                     go();
                 }else {
-                    hideDialog();
-                    Toast.makeText(context, "Invalid username or password", Toast.LENGTH_LONG).show();
+
+                    Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener(){
             @Override
             public void onErrorResponse(VolleyError error){
-                hideDialog();
+
                 Toast.makeText(context, "The server unreachable", Toast.LENGTH_LONG).show();
             }
         }){
@@ -136,15 +135,7 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-    private void showDialog(){
-        if(!progressDialog.isShowing())
-            progressDialog.show();
-    }
 
-    private void hideDialog(){
-        if(progressDialog.isShowing())
-            progressDialog.dismiss();
-    }
 
         /*TextView reg = (TextView) findViewById(R.id.txtReg);
         reg.setOnClickListener(new View.OnClickListener() {
