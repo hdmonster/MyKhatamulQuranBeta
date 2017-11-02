@@ -8,10 +8,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import genius.mykhatamulquranbeta.util.Session;
 
 
 public class startOnlineActivity extends AppCompatActivity {
 
+    Button btnLogout;
+    Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,32 @@ public class startOnlineActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_online);
+
+        session = new Session(this);
+
+        if(!session.loggedin()){
+
+            logout();
+
+        }
+
+        btnLogout = (Button) findViewById(R.id.btn_logout);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View v) {
+
+                logout();
+
+            }
+
+        });
+
+
+
+
 
         Button graf = (Button) findViewById(R.id.btn_grafik);
         graf.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +78,16 @@ public class startOnlineActivity extends AppCompatActivity {
     }
 
 
+
+    private void logout(){
+
+        session.setLoggedin(false);
+
+        finish();
+
+        startActivity(new Intent(startOnlineActivity.this,LoginActivity.class));
+
+    }
 
 
 }
