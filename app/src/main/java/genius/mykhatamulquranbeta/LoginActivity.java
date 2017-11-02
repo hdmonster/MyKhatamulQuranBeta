@@ -23,15 +23,11 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-import genius.mykhatamulquranbeta.helper.SessionManager;
 import genius.mykhatamulquranbeta.list.loginVar;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText user,pass;
-
-    private Context context;
-    SessionManager session;
     Button login;
 
     boolean doubleBackToExitPressedOnce = false;
@@ -85,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                 String pass1 = pass.getText().toString();
 
                 if (user1.equals("") || pass1.equals("")) {
-                    Toast.makeText(context, "Fill the available form", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Fill the available form", Toast.LENGTH_SHORT).show();
                 } else {
                    // Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
                     loggingIn(user1, pass1);
@@ -115,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error){
 
-                Toast.makeText(context, "The server unreachable", Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "The server unreachable", Toast.LENGTH_LONG).show();
             }
         }){
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -130,7 +126,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void go(){
         Intent intent = new Intent(this, startOnlineActivity.class);
-        session.createLoginSession(user.getText().toString(),pass.getText().toString());
         startActivity(intent);
         finish();
     }
