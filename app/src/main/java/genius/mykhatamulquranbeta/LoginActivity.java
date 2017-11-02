@@ -1,5 +1,6 @@
 package genius.mykhatamulquranbeta;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,19 +13,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import genius.mykhatamulquranbeta.list.loginVar;
+import genius.mykhatamulquranbeta.util.Session;
 
 public class LoginActivity extends AppCompatActivity {
 
     private TextView reg,off;
     private EditText user,pass;
     Button login;
+    private Context context;
+    private Session session;
 
     boolean doubleBackToExitPressedOnce = false;
 
@@ -64,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.login_activity);
 
+        context = LoginActivity.this;
+        session = new Session(this);
 
 
         user = (EditText) findViewById(R.id.username);
@@ -71,6 +81,11 @@ public class LoginActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.btnLogin);
         reg = (TextView) findViewById(R.id.txtReg) ;
         off = (TextView) findViewById(R.id.txtOff) ;
+
+        if(session.loggedin()){
+            startActivity(new Intent(LoginActivity.this,startOnlineActivity.class));
+            finish();
+        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Fill the available form", Toast.LENGTH_SHORT).show();
                 } else {
                    // Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
+                    session.setLoggedin(true);
                     loggingIn(user1, pass1);
                 }
             }
@@ -128,13 +144,20 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "The server unreachable", Toast.LENGTH_LONG).show();
             }
         }){
-
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put(loginVar.username, UserLogin);
+                params.put(loginVar.password, PasswordLogin);
+                return params;
+            }
         };
+
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
     private void go(){
         Intent intent = new Intent(this, startOnlineActivity.class);
+        //session.createLoginSession(user.getText().toString(),pass.getText().toString());
         startActivity(intent);
         finish();
     }

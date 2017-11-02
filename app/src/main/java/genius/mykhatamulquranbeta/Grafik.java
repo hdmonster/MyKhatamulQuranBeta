@@ -90,7 +90,7 @@ loadRecycle();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Toast.makeText(getApplicationContext(),"Data Loaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Connected", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override

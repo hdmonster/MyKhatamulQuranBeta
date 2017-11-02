@@ -54,6 +54,9 @@ public class SessionManager {
 
         // commit changes
         editor.commit();
+
+        Intent i = new Intent(_context, LoginActivity.class);
+        _context.startActivity(i);
     }
 
     /**
