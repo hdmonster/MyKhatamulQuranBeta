@@ -88,15 +88,15 @@ public class LoginActivity extends AppCompatActivity {
                 if (user1.equals("") || pass1.equals("")) {
                     Toast.makeText(context, "Fill the available form", Toast.LENGTH_SHORT).show();
                 } else {
-                    loggingIn();
+                    Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
+                    //loggingIn(user1, pass1);
                 }
             }
         });
     }
 
-    private void loggingIn(){
-        final String UserLogin = user.getText().toString().trim();
-        final String PasswordLogin = pass.getText().toString().trim();
+    private void loggingIn( final String UserLogin,  final String PasswordLogin  ){
+
         progressDialog.setMessage("Loading...");
         showDialog();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, loginVar.LOGIN_URL, new Response.Listener<String>()
