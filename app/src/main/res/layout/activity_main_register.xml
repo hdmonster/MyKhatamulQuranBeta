@@ -27,25 +27,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_above="@+id/userku"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp" />
-
-    <EditText
-        android:id="@+id/userku"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:background="@android:color/background_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        tools:ignore="LabelFor"
-
-        android:layout_above="@+id/passwordku"
-        android:layout_alignStart="@+id/namaku"
-        android:layout_marginBottom="19dp" />
-
+        android:layout_marginTop="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 
     <EditText
@@ -58,9 +42,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         tools:ignore="LabelFor"
-        android:layout_above="@+id/confirku"
-        android:layout_alignStart="@+id/userku"
-        android:layout_marginBottom="22dp" />
+
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/emailku" />
 
     <EditText
         android:id="@+id/confirku"
@@ -72,7 +56,8 @@
         android:ems="10"
         android:inputType="textPassword"
         tools:ignore="LabelFor"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/passwordku"
         android:layout_alignStart="@+id/passwordku" />
 
     <EditText
@@ -85,8 +70,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="LabelFor"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/confirku"
-        android:layout_alignStart="@+id/confirku" />
+        android:layout_above="@+id/passwordku"
+        android:layout_alignStart="@+id/namaku"
+        android:layout_marginBottom="26dp" />
 
 </RelativeLayout>

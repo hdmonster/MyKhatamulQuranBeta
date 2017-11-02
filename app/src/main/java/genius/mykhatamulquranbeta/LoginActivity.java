@@ -1,7 +1,5 @@
 package genius.mykhatamulquranbeta;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,22 +9,20 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import genius.mykhatamulquranbeta.list.loginVar;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private TextView reg,off;
     private EditText user,pass;
     Button login;
 
@@ -73,6 +69,8 @@ public class LoginActivity extends AppCompatActivity {
         user = (EditText) findViewById(R.id.username);
         pass = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.btnLogin);
+        reg = (TextView) findViewById(R.id.txtReg) ;
+        off = (TextView) findViewById(R.id.txtOff) ;
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,13 +86,29 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
+                startActivity(intent);
+            }
+        });
+        off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, startOfflineActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void loggingIn( final String UserLogin,  final String PasswordLogin  ){
 
        // progressDialog.setMessage("Loading...");
 //        showDialog();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, loginVar.LOGIN_URL, new Response.Listener<String>()
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://ubkmart.com/MyKhatamulPhp/login.php?User="+UserLogin+"&Pass="+PasswordLogin+" ", new Response.Listener<String>()
         {
             @Override
             public void onResponse(String response){
@@ -114,12 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "The server unreachable", Toast.LENGTH_LONG).show();
             }
         }){
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put(loginVar.username, UserLogin);
-                params.put(loginVar.password, PasswordLogin);
-                return params;
-            }
+
         };
         Volley.newRequestQueue(this).add(stringRequest);
     }

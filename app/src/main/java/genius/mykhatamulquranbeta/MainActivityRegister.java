@@ -36,7 +36,7 @@ public class MainActivityRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_register);
 
-        final EditText Username =(EditText) findViewById(R.id.userku);
+
         final EditText Password =(EditText) findViewById(R.id.passwordku);
         final EditText Confirm = (EditText) findViewById(R.id.confirku);
         final EditText Email =(EditText) findViewById(R.id.emailku);
@@ -48,14 +48,13 @@ public class MainActivityRegister extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
                 String user = User.getText().toString();
-                String username = Username.getText().toString();
                 String confirm = Confirm.getText().toString();
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
 
                 Intent intent = new Intent(MainActivityRegister.this, LoginActivity.class);
 
-                if(user.equals("")||username.equals("")||password.equals("")||email.equals("")){
+                if(user.equals("")||password.equals("")||email.equals("")){
                     Toast.makeText(MainActivityRegister.this, "Please fill the available form", Toast.LENGTH_SHORT).show();
                 }else if(!confirm.equals(password)){
                     Toast.makeText(MainActivityRegister.this, "Password not match", Toast.LENGTH_SHORT).show();
@@ -69,14 +68,12 @@ public class MainActivityRegister extends AppCompatActivity {
     }
 
     public void SendData(){
-    final EditText Username =(EditText) findViewById(R.id.userku);
     final EditText Password =(EditText) findViewById(R.id.passwordku);
     final EditText Email =(EditText) findViewById(R.id.emailku);
     final EditText User =(EditText) findViewById(R.id.namaku);
     final EditText Confirm = (EditText) findViewById(R.id.confirku);
 
     final String user = User.getText().toString();
-    final String username = Username.getText().toString();
     final String password = Password.getText().toString();
     final String email = Email.getText().toString();
     final String confirm = Confirm.getText().toString();
@@ -105,7 +102,6 @@ public class MainActivityRegister extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams(){
                 Map<String,String> params = new HashMap<String, String>();
-                params.put(USERNAME, username);
                 params.put(NAME, user);
                 params.put(EMAIL, email);
                 params.put(PASSWORD, password);

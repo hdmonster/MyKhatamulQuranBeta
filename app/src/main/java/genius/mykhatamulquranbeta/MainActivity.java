@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.util.Random;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
-import genius.mykhatamulquranbeta.helper.SessionManager;
 import genius.mykhatamulquranbeta.util.QuranSettings;
 
 import static android.Manifest.permission.RECORD_AUDIO;
@@ -40,7 +39,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
 public class MainActivity extends AppCompatActivity {
 
-    SessionManager session;
+
     protected SharedPreferences prefs;
     private Context context;
 
@@ -135,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
         final Button book;
 
         context = MainActivity.this;
-        session = new SessionManager(context);
 
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_page);
