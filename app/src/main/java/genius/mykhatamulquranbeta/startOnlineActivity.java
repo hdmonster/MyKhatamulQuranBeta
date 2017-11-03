@@ -30,52 +30,52 @@ public class startOnlineActivity extends AppCompatActivity {
 
             logout();
 
-        }
+                }
 
-        btnLogout = (Button) findViewById(R.id.btn_logout);
+                btnLogout = (Button) findViewById(R.id.btn_logout);
 
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+                btnLogout.setOnClickListener(new View.OnClickListener() {
 
-            @Override
+                    @Override
 
-            public void onClick(View v) {
+                    public void onClick(View v) {
 
-                logout();
+                        logout();
+
+                    }
+
+                });
+
+
+
+
+
+                Button graf = (Button) findViewById(R.id.btn_grafik);
+                graf.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick (View arg0) {
+                        Intent intent = new Intent(startOnlineActivity.this, Grafik.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+                Button start = (Button) findViewById(R.id.btn_start);
+                start.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View arg0) {
+                        Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
 
             }
+            public void openRec(View view) {
+                Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+                startActivity(openRec);
 
-        });
-
-
-
-
-
-        Button graf = (Button) findViewById(R.id.btn_grafik);
-        graf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View arg0) {
-                Intent intent = new Intent(startOnlineActivity.this, Grafik.class);
-                startActivity(intent);
             }
-        });
-
-
-        Button start = (Button) findViewById(R.id.btn_start);
-        start.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-    }
-    public void openRec(View view) {
-        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
-        startActivity(openRec);
-
-    }
 
 
 
