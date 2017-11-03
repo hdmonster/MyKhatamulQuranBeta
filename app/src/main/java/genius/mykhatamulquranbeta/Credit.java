@@ -3,13 +3,12 @@ package genius.mykhatamulquranbeta;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 
 /**
  * Created by ALIF_PC on 11/1/2017.
  */
 
-public class Credit extends MainActivity {
+public abstract class Credit extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

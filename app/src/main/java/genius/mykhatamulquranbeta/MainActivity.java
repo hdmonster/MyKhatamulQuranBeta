@@ -1,12 +1,9 @@
 package genius.mykhatamulquranbeta;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,42 +16,53 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Gallery;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.Random;
 
 import genius.mykhatamulquranbeta.data.ApplicationConstants;
+import genius.mykhatamulquranbeta.util.BookmarksManager;
+import genius.mykhatamulquranbeta.util.QuranGalleryAdapter;
 import genius.mykhatamulquranbeta.util.QuranSettings;
 
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.R.attr.width;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity {
 
+    protected GestureDetector gestureDetector;
+    protected static final int BOOKMARK_SAFE_REGION = 15;
 
+    protected Gallery gallery = null;
+    protected ImageView btnBookmark = null;
+    protected QuranGalleryAdapter galleryAdapter = null;
+    protected boolean inReadingMode = false;
     protected SharedPreferences prefs;
-    private Context context;
+    Context ctx;
 
-    String createBookmarkSession;
 
     ViewPager viewPager;
     CustomSwipeAdpter adpter;
 
-    Button buttonStart, buttonStop ;
+    Button buttonStart, buttonStop;
     String AudioSavePathInDevice = null;
-    MediaRecorder mediaRecorder ;
-    Random random ;
+    MediaRecorder mediaRecorder;
+    Random random;
     String RandomAudioFileName = "RecordAnda";
     public static final int RequestPermissionCode = 1;
-    MediaPlayer mediaPlayer ;
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -131,9 +139,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        final Button book;
 
-        context = MainActivity.this;
+        BookmarksManager.load(prefs);
+        ctx = MainActivity.this;
 
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_page);
@@ -141,21 +149,29 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adpter);
         viewPager.setCurrentItem(adpter.getCount() - 1);
 
-        book = (Button) findViewById(R.id.btnBook);
+        int page = loadPageState(savedInstanceState);
+        renderPage(ApplicationConstants.PAGES_LAST - page);
+
+        toggleMode();
+
+        gestureDetector = new GestureDetector(new QuranGestureDetector());
+
+        //toggleMode();
+
+       /* book = (Button) findViewById(R.id.btnBook);
         book.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
 
-                Intent intent = new Intent();
-                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Sorry, this feature is inbuild", Toast.LENGTH_LONG).show();
 
-            }
+            }*/
            /* protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
                 //params.put(BookmarksActivity.page);
                 return params;
             }*/
-        });
+
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -187,11 +203,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(checkPermission()) {
+                if (checkPermission()) {
 
                     AudioSavePathInDevice =
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
-                                    CreateRandomAudioFileName(5) + "Hello.mp3";
+                                    CreateRandomAudioFileName(5) + "Record.mp3";
 
                     MediaRecorderReady();
 
@@ -230,22 +246,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void MediaRecorderReady(){
-        mediaRecorder=new MediaRecorder();
+
+    public void MediaRecorderReady() {
+        mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(AudioSavePathInDevice);
     }
 
-    public String CreateRandomAudioFileName(int string){
-        StringBuilder stringBuilder = new StringBuilder( string );
-        int i = 0 ;
-        while(i < string ) {
+    public String CreateRandomAudioFileName(int string) {
+        StringBuilder stringBuilder = new StringBuilder(string);
+        int i = 0;
+        while (i < string) {
             stringBuilder.append(RandomAudioFileName.
                     charAt(random.nextInt(RandomAudioFileName.length())));
 
-            i++ ;
+            i++;
         }
         return stringBuilder.toString();
     }
@@ -260,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
             case RequestPermissionCode:
-                if (grantResults.length> 0) {
+                if (grantResults.length > 0) {
                     boolean StoragePermission = grantResults[0] ==
                             PackageManager.PERMISSION_GRANTED;
                     boolean RecordPermission = grantResults[1] ==
@@ -270,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Permission Granted",
                                 Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(MainActivity.this,"Permission",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Permission", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
@@ -340,23 +357,114 @@ public class MainActivity extends AppCompatActivity {
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        switch (requestCode) {
-            case ApplicationConstants.BOOKMARKS_CODE:
-                if (resultCode == Activity.RESULT_OK) {
-                    Integer lastPage = data.getIntExtra("page", ApplicationConstants.PAGES_FIRST);
-                    jumpTo(lastPage);
-                }
-                break;
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        galleryAdapter.emptyCache();
+    }
+
+    protected void initGalleryAdapter() {
+
+    }
+
+    protected void initComponents() {
+        initGalleryAdapter();
+
+
+        gallery = (Gallery) findViewById(R.id.view_page);
+        gallery.setAdapter(galleryAdapter);
+        gallery.setAnimationDuration(0);
+        gallery.setSpacing(25);
+
+
+        ImageView btnBookmark = (ImageView) findViewById(R.id.btnBookmark);
+        btnBookmark.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                BookmarksManager.toggleBookmarkState(QuranSettings.getInstance().getLastPage(), prefs);
+                adjustBookmarkView();
+            }
+        });
+    }
+
+    protected void goToNextPage() {
+        int position = gallery.getSelectedItemPosition();
+        if (position > 0)
+            renderPage(position - 1);
+    }
+
+    protected void goToPreviousPage() {
+        int position = gallery.getSelectedItemPosition();
+        if (position < ApplicationConstants.PAGES_LAST - 1)
+            renderPage(position + 1);
+    }
+
+    protected void renderPage(int position) {
+        gallery.setSelection(position, true);
+        adjustBookmarkView();
+    }
+
+    protected void adjustBookmarkView() {
+        if (BookmarksManager.getInstance().contains(QuranSettings.getInstance().getLastPage())) {
+            btnBookmark.setImageResource(R.drawable.bookmark);
+        } else {
+            btnBookmark.setImageResource(R.drawable.remove_bookmark);
         }
     }
-    public void jumpTo(int page) {
 
+
+    public class QuranGestureDetector extends GestureDetector.SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                               float velocityY) {
+            return false;
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            return handleDoubleTap(e);
+        }
+
+        @Override
+        public boolean onSingleTapConfirmed(MotionEvent e) {
+            return handleSingleTap(e);
+        }
     }
 
+
+    protected int loadPageState(Bundle savedInstanceState) {
+        int page = savedInstanceState != null ? savedInstanceState.getInt("page") : ApplicationConstants.PAGES_FIRST;
+        if (page == ApplicationConstants.PAGES_FIRST) {
+            Bundle extras = getIntent().getExtras();
+            page = extras != null ? extras.getInt("page") : QuranSettings.getInstance().getLastPage();
+        } else if (page == ApplicationConstants.NO_PAGE_SAVED) {
+            page = ApplicationConstants.PAGES_FIRST;
+        }
+
+        return page;
+    }
+
+    public boolean handleSingleTap(MotionEvent e) {
+        return false;
+    }
+
+    public boolean handleDoubleTap(MotionEvent e) {
+        int sliceWidth = (int) (0.2 * width);
+
+        // Skip bookmark region
+        int bookmarkRegionY = btnBookmark.getTop() + btnBookmark.getHeight() + BOOKMARK_SAFE_REGION;
+        int bookmarkRegionX = btnBookmark.getLeft() + btnBookmark.getWidth() + BOOKMARK_SAFE_REGION;
+        if (e.getY() < bookmarkRegionY && e.getX() < bookmarkRegionX)
+            return true;
+
+        if (e.getX() < sliceWidth)
+            goToNextPage();
+        else if (e.getX() > (width - sliceWidth))
+            goToPreviousPage();
+        else toggleMode();
+
+        return true;
+    }
 
     @Override
     protected void onResume() {
@@ -369,5 +477,26 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         QuranSettings.save(prefs);
     }
+
+
+    protected void toggleMode() {
+        if (inReadingMode) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+            //toolbar.setVisibility(View.VISIBLE);
+            //btnLockOrientation.setVisibility(View.VISIBLE);
+            btnBookmark.setVisibility(View.VISIBLE);
+            //adjustLockView();
+            adjustBookmarkView();
+        } else {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+
+            //toolbar.setVisibility(View.INVISIBLE);
+            //btnLockOrientation.setVisibility(View.INVISIBLE);
+            btnBookmark.setVisibility(View.INVISIBLE);
+        }
     }
+}
 

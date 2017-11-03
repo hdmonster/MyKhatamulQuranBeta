@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <LinearLayout5
+        <LinearLayout
 
             android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
@@ -20,13 +20,13 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
-        </LinearLayout5>
+        </LinearLayout>
 
 
 
     </FrameLayout>
-    <Button
-        android:id="@+id/btnBook"
+    <ImageView
+        android:id="@+id/btnBookmark"
         android:background="@drawable/bookmark"
         android:layout_width="70dp"
         android:layout_height="70dp"

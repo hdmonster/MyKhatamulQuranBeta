@@ -19,10 +19,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import genius.mykhatamulquranbeta.data.QuranInfo;
 import genius.mykhatamulquranbeta.util.BookmarksManager;
 
-public class BookmarksActivity extends MainActivity {
+public abstract class BookmarksActivity extends MainActivity {
 
 	private static final int CONTEXT_MENU_REMOVE = 0;
 	public static String page;
@@ -42,9 +41,7 @@ public class BookmarksActivity extends MainActivity {
 		ArrayList<Integer> bookmarks = BookmarksManager.getInstance().getBookmarks();
 		for (int i = 0; i < bookmarks.size(); i++) {
 			int page = bookmarks.get(i);
-			String title = (i+1) + ". " + QuranInfo.getPageTitleNoPrefix(page);
 			Map<String, String> map = new HashMap<String, String>();
-			map.put("suraname", title);
 			bookmarkList.add(map);
 		}
 		

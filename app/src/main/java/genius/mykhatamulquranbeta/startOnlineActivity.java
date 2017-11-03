@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import genius.mykhatamulquranbeta.util.Session;
 
@@ -30,52 +31,62 @@ public class startOnlineActivity extends AppCompatActivity {
 
             logout();
 
-                }
+        }
 
-                btnLogout = (Button) findViewById(R.id.btn_logout);
+        btnLogout = (Button) findViewById(R.id.btn_logout);
 
-                btnLogout.setOnClickListener(new View.OnClickListener() {
+        btnLogout.setOnClickListener(new View.OnClickListener() {
 
-                    @Override
+            @Override
 
-                    public void onClick(View v) {
+            public void onClick(View v) {
 
-                        logout();
-
-                    }
-
-                });
-
-
-
-
-
-                Button graf = (Button) findViewById(R.id.btn_grafik);
-                graf.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick (View arg0) {
-                        Intent intent = new Intent(startOnlineActivity.this, Grafik.class);
-                        startActivity(intent);
-                    }
-                });
-
-
-                Button start = (Button) findViewById(R.id.btn_start);
-                start.setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View arg0) {
-                        Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                });
-
+                logout();
 
             }
-            public void openRec(View view) {
-                Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
-                startActivity(openRec);
 
+        });
+
+
+
+        Button book = (Button) findViewById(R.id.btn_continue);
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                //Toast.makeText(startOnlineActivity.this, "This feature is inbuild", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(startOnlineActivity.this, BookmarksActivity.class);
+                startActivity(intent);
             }
+        });
+
+        Button graf = (Button) findViewById(R.id.btn_grafik);
+        graf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View arg0) {
+
+                Toast.makeText(startOnlineActivity.this, "Sorry, this feature will be added in the next update acccording to specific reasons", Toast.LENGTH_SHORT).show();
+                /*Intent intent = new Intent(startOnlineActivity.this, Grafik.class);
+                startActivity(intent);*/
+            }
+        });
+
+
+        Button start = (Button) findViewById(R.id.btn_start);
+        start.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+    public void openRec(View view) {
+        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+        startActivity(openRec);
+
+    }
 
 
 

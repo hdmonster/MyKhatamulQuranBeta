@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import static genius.mykhatamulquranbeta.data.ApplicationConstants.SETTINGS_CODE;
+
 public class CustomSwipeAdpter extends PagerAdapter {
 
 
@@ -119,6 +121,16 @@ public class CustomSwipeAdpter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((LinearLayout) object);
     }
-
-     }
+    //activities code
+    public static final int BOOKMARKS_CODE = SETTINGS_CODE + 1;
+    public static final int QURAN_VIEW_CODE = BOOKMARKS_CODE + 1;
+    //pages
+    public static final int PAGES_FIRST = 1;
+    public static final int PAGES_LAST = 604;
+    //preference key
+    public static final String PREFERNCES = "MyKhataman_Settings";
+    //bookamrk
+    public static final String PREF_LAST_PAGE = "lastPage";
+    public static final String PREF_BOOKMARKS = "bookmarks";
+}
 

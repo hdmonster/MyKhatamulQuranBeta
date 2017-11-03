@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView reg,off;
     private EditText user,pass;
     Button login;
-    private Context context;
+    Context context;
     private Session session;
 
     boolean doubleBackToExitPressedOnce = false;
