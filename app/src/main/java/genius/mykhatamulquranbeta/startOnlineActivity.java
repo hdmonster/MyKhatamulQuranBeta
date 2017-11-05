@@ -53,9 +53,9 @@ public class startOnlineActivity extends AppCompatActivity {
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                //Toast.makeText(startOnlineActivity.this, "This feature is inbuild", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(startOnlineActivity.this, BookmarksActivity.class);
-                startActivity(intent);
+                Toast.makeText(startOnlineActivity.this, "Maaf, fitur masih dalam tahap pengerjaan", Toast.LENGTH_LONG).show();
+                /*Intent intent = new Intent(startOnlineActivity.this, BookmarksActivity.class);
+                startActivity(intent);*/
             }
         });
 
@@ -75,6 +75,8 @@ public class startOnlineActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
+
+                //Toast.makeText(startOnlineActivity.this, "Maaf, Al-Quran sedang dalam tahap pengembangan", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(startOnlineActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -83,7 +85,7 @@ public class startOnlineActivity extends AppCompatActivity {
 
     }
     public void openRec(View view) {
-        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.sec.android.app.myfiles");
+        Intent openRec = getPackageManager().getLaunchIntentForPackage("com.google.android.music");
         startActivity(openRec);
 
     }

@@ -17,6 +17,11 @@ public class LoadingActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_loading);
+
+        DottedProgressBar progressBar = (DottedProgressBar) findViewById(R.id.progress);
+        progressBar.startProgress();
+        progressBar.stopProgress();
+
     Thread myThread = new Thread(){
        @Override
        public void run(){

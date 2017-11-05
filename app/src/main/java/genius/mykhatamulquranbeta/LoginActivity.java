@@ -97,8 +97,11 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Fill the available form", Toast.LENGTH_SHORT).show();
                 } else {
                    // Toast.makeText(context, user1 +" "+ pass1, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Please Wait...", Toast.LENGTH_LONG).show();
                     session.setLoggedin(true);
                     loggingIn(user1, pass1);
+                    finishAffinity();
+                    finish();
                 }
             }
         });

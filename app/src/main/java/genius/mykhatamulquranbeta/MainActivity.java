@@ -138,9 +138,9 @@ import static android.R.attr.width;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        BookmarksManager.load(prefs);
+        //BookmarksManager.load(prefs);
         ctx = MainActivity.this;
 
         setContentView(R.layout.activity_main);
@@ -149,7 +149,7 @@ import static android.R.attr.width;
         viewPager.setAdapter(adpter);
         viewPager.setCurrentItem(adpter.getCount() - 1);
 
-        int page = loadPageState(savedInstanceState);
+        /*int page = loadPageState(savedInstanceState);
         renderPage(ApplicationConstants.PAGES_LAST - page);
 
         toggleMode();
@@ -358,7 +358,7 @@ import static android.R.attr.width;
     }
 
 
-    @Override
+   /* @Override
     public void onLowMemory() {
         super.onLowMemory();
         galleryAdapter.emptyCache();
@@ -497,6 +497,6 @@ import static android.R.attr.width;
             //btnLockOrientation.setVisibility(View.INVISIBLE);
             btnBookmark.setVisibility(View.INVISIBLE);
         }
-    }
+    }*/
 }
 
