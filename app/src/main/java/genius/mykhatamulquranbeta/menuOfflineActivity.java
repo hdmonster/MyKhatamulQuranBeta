@@ -2,6 +2,7 @@ package genius.mykhatamulquranbeta;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -11,7 +12,7 @@ import android.widget.Button;
  * Created by DAFFA_PC on 18/11/2017.
  */
 
-public class menuOfflineActivity extends startOfflineActivity {
+public class menuOfflineActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

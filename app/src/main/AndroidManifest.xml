@@ -33,6 +33,9 @@
         <activity android:name=".startOnlineActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".Grafik"/>
+        <activity android:name=".menuOfflineActivity"/>
+        <activity android:name=".tutorial"/>
+        <activity android:name=".alifprofile"/>
 
 
 
