@@ -25,7 +25,7 @@
 
 
     </FrameLayout>
-    <ImageView
+    <Button
         android:id="@+id/btnBookmark"
         android:background="@drawable/bookmark"
         android:layout_width="70dp"
@@ -37,7 +37,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/fullscreen_content"></android.support.v4.view.ViewPager>
+        android:layout_toEndOf="@+id/fullscreen_content">
+
+    </android.support.v4.view.ViewPager>
 
     <Button
         android:id="@+id/btnStop"
