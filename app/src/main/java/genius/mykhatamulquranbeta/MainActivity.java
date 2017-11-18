@@ -204,7 +204,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
                     AudioSavePathInDevice =
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
-                                    CreateRandomAudioFileName(5) + "Record.mp3" + position;
+                                     "Hal." + position;
 
                     MediaRecorderReady();
 
