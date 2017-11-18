@@ -18,11 +18,11 @@ public class startOfflineActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start_offline);
 
-        Button online = (Button) findViewById(R.id.btn_online);
-        online.setOnClickListener(new View.OnClickListener() {
+        Button button = (Button) findViewById(R.id.ok);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent intent = new Intent(startOfflineActivity.this, LoginActivity.class);
+                Intent intent = new Intent(startOfflineActivity.this, menuOfflineActivity.class);
                 startActivity(intent);
             }
         });
