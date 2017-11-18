@@ -14,7 +14,9 @@
         app:srcCompat="@drawable/logokita"
         android:layout_above="@+id/btn_start2"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp" />
+        android:layout_marginBottom="63dp"
+        tools:ignore="ContentDescription,UnknownIdInLayout"
+        android:contentDescription="" />
 
     <EditText
         android:id="@+id/editText"
@@ -26,7 +28,8 @@
         android:layout_below="@+id/imageView4"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="74dp"
-        android:layout_marginTop="73dp" />
+        android:layout_marginTop="73dp"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/buttonOff"
@@ -35,5 +38,5 @@
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68dp"
-        android:text="Button" />
+        android:text="@string/button" />
 </RelativeLayout>
