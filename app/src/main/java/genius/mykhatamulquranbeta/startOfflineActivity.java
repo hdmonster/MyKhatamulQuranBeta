@@ -27,15 +27,6 @@ public class startOfflineActivity extends AppCompatActivity {
             }
         });
 
-        Button start = (Button) findViewById(R.id.btn_start2);
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(startOfflineActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
     }
 }
