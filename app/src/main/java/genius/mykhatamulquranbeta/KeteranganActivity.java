@@ -53,6 +53,14 @@ public class KeteranganActivity extends Activity {
                 startActivity(intent);
             }
         });
+        Button tuto = (Button) findViewById(R.id.tuto);
+        tuto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(KeteranganActivity.this, tutorial.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
