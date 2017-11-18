@@ -29,7 +29,8 @@
         tools:ignore="LabelFor"
         android:layout_marginBottom="21dp"
         android:layout_above="@+id/emailku"
-        android:layout_alignStart="@+id/imageView13" />
+        android:layout_alignStart="@+id/imageView13"
+        android:layout_marginRight="30dp"/>
 
 
     <EditText
@@ -42,7 +43,7 @@
         android:backgroundTint="@android:color/white"
         android:ems="10"
         android:hint="Password"
-
+        android:layout_marginRight="30dp"
         android:inputType="textPassword"
         tools:ignore="LabelFor" />
 
@@ -58,7 +59,8 @@
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:layout_marginRight="30dp"/>
 
     <EditText
         android:id="@+id/emailku"
@@ -72,7 +74,8 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
-        tools:ignore="LabelFor" />
+        tools:ignore="LabelFor"
+        android:layout_marginRight="30dp"/>
 
     <ImageView
         android:id="@+id/imageView7"

@@ -82,6 +82,15 @@ public class LoginActivity extends AppCompatActivity {
         reg = (TextView) findViewById(R.id.txtReg) ;
         off = (TextView) findViewById(R.id.txtOff) ;
 
+        TextView reg = (TextView) findViewById(R.id.txtReg);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
+                startActivity(intent);
+            }
+        });
+
         if(session.loggedin()){
             startActivity(new Intent(LoginActivity.this,startOnlineActivity.class));
             finish();
@@ -165,15 +174,5 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-
-
-        /*TextView reg = (TextView) findViewById(R.id.txtReg);
-        reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent(LoginActivity.this, MainActivityRegister.class);
-                startActivity(intent);
-            }
-        });
-    }*/
 }
+

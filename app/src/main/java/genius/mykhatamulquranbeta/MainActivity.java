@@ -37,6 +37,8 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
  */
     public class MainActivity extends AppCompatActivity {
 
+    int position;
+
     protected GestureDetector gestureDetector;
     protected static final int BOOKMARK_SAFE_REGION = 15;
 
@@ -143,6 +145,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
         viewPager.setAdapter(adpter);
         viewPager.setCurrentItem(adpter.getCount() - 1);
 
+        position = viewPager.getCurrentItem();
         /*int page = loadPageState(savedInstanceState);
         renderPage(ApplicationConstants.PAGES_LAST - page);
 
@@ -201,7 +204,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
                     AudioSavePathInDevice =
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/" +
-                                    CreateRandomAudioFileName(5) + "Record.mp3";
+                                    CreateRandomAudioFileName(5) + "Record.mp3" + position;
 
                     MediaRecorderReady();
 
