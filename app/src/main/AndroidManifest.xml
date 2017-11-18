@@ -18,11 +18,8 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoadingActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme">
+        <activity android:name=".Splashscreen"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,9 +33,9 @@
         <activity android:name=".startOnlineActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".Grafik"/>
-        <activity android:name=".BookmarksActivity"/>
 
-        
+
+
 
     </application>
 

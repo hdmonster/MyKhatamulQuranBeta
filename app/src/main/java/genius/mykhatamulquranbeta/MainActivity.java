@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +18,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
@@ -28,14 +26,10 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.Random;
 
-import genius.mykhatamulquranbeta.data.ApplicationConstants;
-import genius.mykhatamulquranbeta.util.BookmarksManager;
 import genius.mykhatamulquranbeta.util.QuranGalleryAdapter;
-import genius.mykhatamulquranbeta.util.QuranSettings;
 
 import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.R.attr.width;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

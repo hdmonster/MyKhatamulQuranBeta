@@ -81,6 +81,17 @@ public class startOnlineActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button dibuat = (Button) findViewById(R.id.dibuat);
+        dibuat.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+
+                //Toast.makeText(startOnlineActivity.this, "Maaf, Al-Quran sedang dalam tahap pengembangan", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(startOnlineActivity.this, alifprofile.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
