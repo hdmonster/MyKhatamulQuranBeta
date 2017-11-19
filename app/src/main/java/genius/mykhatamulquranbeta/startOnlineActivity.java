@@ -87,7 +87,7 @@ public class startOnlineActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 //Toast.makeText(startOnlineActivity.this, "Maaf, Al-Quran sedang dalam tahap pengembangan", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(startOnlineActivity.this, alifprofile.class);
+                Intent intent = new Intent(startOnlineActivity.this, profileFragment.class);
                 startActivity(intent);
             }
         });

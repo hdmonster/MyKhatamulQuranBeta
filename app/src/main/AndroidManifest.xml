@@ -3,13 +3,15 @@
     package="genius.mykhatamulquranbeta">
 
     <!-- To auto-c  omplete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-library android:name="genius.mykhatamulquranbeta.data.ApplicationConstants" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +20,8 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splashscreen"
+        <activity
+            android:name=".Splashscreen"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,17 +34,15 @@
         <activity android:name=".KeteranganActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".startOnlineActivity" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".Grafik"/>
-        <activity android:name=".menuOfflineActivity"/>
-        <activity android:name=".tutorial"/>
-        <activity android:name=".alifprofile"/>
-
-
-
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Grafik" />
+        <activity android:name=".menuOfflineActivity" />
+        <activity android:name=".tutorial" />
+        <activity android:name=".profil.alifprofile" />
+        <activity
+            android:name=".profileFragment"
+            android:label="@string/title_activity_profil_fragment"
+            android:theme="@style/AppTheme"></activity>
     </application>
-
-    <uses-library android:name="genius.mykhatamulquranbeta.data.ApplicationConstants"/>
 
 </manifest>

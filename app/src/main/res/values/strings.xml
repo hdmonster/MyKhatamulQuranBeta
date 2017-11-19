@@ -48,5 +48,6 @@
 
     <string name="title_activity_fragment">FragmentActivity</string>
     <string name="button">Button</string>
+    <string name="title_activity_profil_fragment">profilFragment</string>
 
 </resources>
